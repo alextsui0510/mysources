@@ -1,0 +1,2572 @@
+: 1441055371:0;ll
+: 1441055376:0;cd source
+: 1441055378:0;cd
+: 1441055384:0;apt-get install firewalld
+: 1441055396:0;cd
+: 1441055398:0;l
+: 1441055402:0;cd source
+: 1441055403:0;ll
+: 1441055420:0;cp alex.xml /etc/firewalld/services/alex.xml
+: 1441055447:0;cp myzone.xml /etc/firewalld/zones/myzone.xml
+: 1441055459:0;vi /etc/firewalld/firewalld.conf
+: 1441055488:0;service firewalld restart
+: 1441055500:0;la
+: 1441055516:0;cp .zshrc ../.zshrc
+: 1441055519:0;l
+: 1441055521:0;cd 
+: 1441055523:0;ll
+: 1441055525:0;la
+: 1441055530:0;fcd
+: 1441055535:0;vi .zshrc
+: 1441055547:0;source .zshrc
+: 1441055551:0;fcdla
+: 1441055561:0;ifconfig
+: 1441055654:0;apt-get install build-essential autoconf libtool libssl-dev gawk debhelper git
+: 1441055689:0;git clone https://github.com/shadowsocks/shadowsocks-libev.git
+: 1441055695:0;cd shadowsocks-libev
+: 1441055696:0;ll
+: 1441055709:0;dpkg-buildpackage -us -uc
+: 1441055785:0;cd 
+: 1441055788:0;dpkg -i shadowsocks-libev*.deb
+: 1441055796:0;cd /etc/shadowsocks-libev
+: 1441055797:0;ll
+: 1441055800:0;vi config.json
+: 1441055984:0;service shadowsocks-libev restart
+: 1441055991:0;npg ss-server
+: 1441056004:0;vi /etc/rc.local
+: 1441056072:0;cd
+: 1441056075:0;nohup setsid ss-local -c /etc/shadowsocks-libev/config.json -u > /var/log/ss-local.log &
+: 1441056082:0;npg ss-local
+: 1441056092:0;cd /etc/ssh
+: 1441056096:0;ll
+: 1441056104:0;vi sshd_config
+: 1441056211:0;ll
+: 1441056217:0;cd source
+: 1441056218:0;ll
+: 1441056222:0;la
+: 1441056240:0;cp -rf .vim ../.vim
+: 1441056259:0;cp .vimrc ../.vimrc
+: 1441056280:0;cp -rf .ssh ../.ssh
+: 1441056282:0;cd
+: 1441056285:0;cd .ssh
+: 1441056287:0;l
+: 1441056292:0;cd .ssh
+: 1441056294:0;ll
+: 1441056302:0;mv * ../
+: 1441056309:0;ll
+: 1441056311:0;cd ..
+: 1441056313:0;l
+: 1441056322:0;rm -rf .ssh
+: 1441056324:0;l
+: 1441056327:0;rm known_hosts
+: 1441056333:0;vi config
+: 1441056360:0;chmod +x *
+: 1441056362:0;l
+: 1441056372:0;chmod 400 *
+: 1441056373:0;l
+: 1441056378:0;cd
+: 1441056386:0;mkdir github
+: 1441056388:0;cd github
+: 1441056407:0;git clone github2:blxu/blxu.github.io.git
+: 1441056413:0;l
+: 1441056425:0;git clone github2:blxu/ios.git
+: 1441056438:0;git clone github2:blxu/ios.pac.git
+: 1441056441:0;l
+: 1441056449:0;mkdir blxu
+: 1441056461:0;mv blxu.github.io blxu/
+: 1441056462:0;l
+: 1441056468:0;mv ios.pac blxu
+: 1441056470:0;l
+: 1441056471:0;cd
+: 1441056472:0;ll
+: 1441056475:0;la
+: 1441056481:0;cd .vim
+: 1441056482:0;l
+: 1441056485:0;cd
+: 1441056490:0;vi .vimrc
+: 1441056504:0;l
+: 1441056512:0;ll
+: 1441056548:0;mkdir after_make
+: 1441056562:0;mv shadowsocks-libev_* after_make/
+: 1441056564:0;ll
+: 1441056572:0;mv after_make shadowsocks-libev
+: 1441056574:0;l
+: 1441056575:0;ll
+: 1441056590:0;mv shadowsocks-libev .shadowsocks-libev
+: 1441056591:0;ll
+: 1441056601:0;mv source .source
+: 1441056602:0;ll
+: 1441056605:0;cd github
+: 1441056606:0;ll
+: 1441056616:0;mkdir alextsui0510
+: 1441056619:0;cd alextsui0510
+: 1441056640:0;git clone github:alextsui0510/alextsui0510.github.io.git
+: 1441056646:0;l
+: 1441056659:0;git clone github:alextsui0510/ios.pac
+: 1441056667:0;git clone github:alextsui0510/ios.pac.git
+: 1441056671:0;rm -rf ios.pac
+: 1441056674:0;git clone github:alextsui0510/ios.pac.git
+: 1441056689:0;git clone github:alextsui0510/mobileconfig.git
+: 1441056702:0;git clone github:alextsui0510/pacforios.git
+: 1441056715:0;git clone github:alextsui0510/certificates.git
+: 1441056719:0;ll
+: 1441056722:0;cd alextsui0510.github.io
+: 1441056724:0;ll
+: 1441056725:0;cd
+: 1441056726:0;ll
+: 1441056731:0;ss -ln
+: 1441056776:0;ip
+: 1441056781:0;ifconfig
+: 1441056808:0;npg ss-local
+: 1441056826:0;npg ss-server
+: 1441056838:0;service sshd restart
+: 1441056843:0;fcdla
+: 1441056856:0;npg sshd
+: 1441056876:0;npg ss-local
+: 1441057290:0;ll
+: 1441057293:0;fcdla
+: 1441057317:0;fcdmp --add-service=dhcpv6-client
+: 1441057320:0;fcdrd
+: 1441057324:0;fcdla
+: 1441057360:0;vi /etc/firewalld/services/alex.xml
+: 1441057391:0;service firewalld restart
+: 1441057394:0;fcdla
+: 1441057421:0;nslookup alextsui.club
+: 1441057592:0;ll
+: 1441057595:0;date
+: 1441057609:0;vi /etc/timezone
+: 1441057641:0;date
+: 1441057666:0;vi /etc/fonts/fonts.conf
+: 1441057677:0;cd /etc
+: 1441057684:0;cd locale
+: 1441057697:0;vi locale.gen
+: 1441057748:0;locale-gen
+: 1441057755:0;cd
+: 1441057759:0;date
+: 1441057774:0;shutdown -r now
+: 1441057807:0;ll
+: 1441057811:0;fcdla
+: 1441057818:0;npg ss-local
+: 1441057976:0;date
+: 1441058023:0;ifconfig 
+: 1441058109:0;cd /etc/shadowsocks-libev
+: 1441058111:0;vi config.json
+: 1441058164:0;service shadowsocks-libev restart
+: 1441058172:0;npg ss-server
+: 1441058182:0;npg ss-local
+: 1441058192:0;kill 686
+: 1441058203:0;vi /etc/rc.local
+: 1441058218:0;nohup setsid ss-local -c /etc/shadowsocks-libev/config.json -u > /var/log/ss-local.log &
+: 1441058220:0;ll
+: 1441058226:0;npg ss-local
+: 1441058268:0;npg ss-server
+: 1441058375:0;npg ss-local
+: 1441059774:0;cd github/alextsui0510/ios.pac
+: 1441059796:0;git checkout --orphan master
+: 1441059797:0;l
+: 1441059801:0;vi test.sh
+: 1441059857:0;./test.sh
+: 1441059867:0;cd
+: 1441059898:0;git config --global user.name "alextsui0510"
+: 1441059923:0;git config --global user.email "alexxu0150@gmail.com"
+: 1441059930:0;j ios.pac
+: 1441059944:0;cd github/alextsui0510/ios.pac
+: 1441059948:0;./test.sh
+: 1441059993:0;apt-get install python-pip
+: 1441060013:0;pip install gfwlist2pac
+: 1441060042:0;cd /usr/local/lib/python2.7/dist-packages/gfwlist2pac
+: 1441060047:0;cd resources
+: 1441060048:0;l
+: 1441060056:0;vi abp.js
+: 1441060196:0;vi builtin.txt
+: 1441060218:0;vi proxy.pac
+: 1441060298:0;cdd
+: 1441060300:0;cd
+: 1441060307:0;cd github/alextsui0510/ios.pac
+: 1441060313:0;./test.sh
+: 1441060320:0;ll
+: 1441060661:0;cd github/alextsui0510/ios.pac
+: 1441060665:0;vi test.sh
+: 1441060716:0;./test.sh
+: 1441060722:0;ll
+: 1441060779:0;git checkout gh-pages
+: 1441060782:0;l
+: 1441060788:0;vi test.sh
+: 1441060836:0;./test.sh
+: 1441061132:0;vi /etc/shadowsocks-libev/config.json
+: 1441061168:0;reboot
+: 1441061332:0;vi /etc/shadowsocks-libev/config.json
+: 1441061373:0;reboot
+: 1441061497:0;cd github/blxu
+: 1441061505:0;cd ios.pac
+: 1441061507:0;ll
+: 1441061526:0;cp ../../alextsui0510/ios.pac/test.sh .
+: 1441061529:0;ll
+: 1441061540:0;vi test.sh
+: 1441061552:0;./test.sh
+: 1441062066:0;ll
+: 1441062711:0;cd github/blxu/ios.pac
+: 1441062715:0;git pull
+: 1441062722:0;l
+: 1441062727:0;vi test.sh
+: 1441062743:0;./test.sh
+: 1441063054:0;npg ss-local
+: 1441085776:0;cd github
+: 1441085780:0;cd alextsui0510
+: 1441085783:0;cd alextsui0510.github.io
+: 1441085786:0;l
+: 1441085796:0;vi CNAME
+: 1441085833:0;./test.sh
+: 1441085843:0;git pull
+: 1441085874:0;git pull -u origin master
+: 1441085892:0;git add --all .
+: 1441085903:0;git commit -m "all"
+: 1441085918:0;git pull -u origin master
+: 1441085934:0;git push -u origin master
+: 1441085960:0;vi CNAME
+: 1441085985:0;l
+: 1441085993:0;./test.sh
+: 1441086616:0;iptables
+: 1441086624:0;iptables -L
+: 1441086665:0;apt-get update
+: 1441086712:0;apt-get upgrade
+: 1441086813:0;apt-get autoremove
+: 1441086860:0;ll
+: 1441086889:0;vi /etc/network/interfaces
+: 1441087180:0;fcd --add-interface=eth1
+: 1441087189:0;fcdrd
+: 1441087200:0;fcdla
+: 1441087357:0;ifconfig
+: 1441087380:0;fcdmp --add-forward-port=port=23:proto=tcp:toaddr=10.134.31.74
+: 1441087384:0;fcdrd
+: 1441087392:0;fcdla
+: 1441087487:0;npg ss-local
+: 1441087547:0;npg ss-server
+: 1441087572:0;ifconfig
+: 1441087632:0;vi /etc/hosts
+: 1441087699:0;route
+: 1441087728:0;ip
+: 1441087745:0;iptables -L
+: 1441087759:0;ifconfig eth1
+: 1441087770:0;ifconfig lo
+: 1441087833:0;vi /etc/shadowsocks-libev/config.json
+: 1441087872:0;service shadowsocks-libev restart
+: 1441087885:0;npg ss-server
+: 1441087911:0;service shadowsocks-libe status
+: 1441087919:0;service shadowsocks-libev status
+: 1441087944:0;vi /etc/shadowsocks-libev/config.json
+: 1441088039:0;service shadowsocks-libev restart
+: 1441088044:0;service shadowsocks-libev status
+: 1441088056:0;npg ss-server
+: 1441088081:0;npg ss-local
+: 1441088173:0;vi /etc/shadowsocks-libev/config.json
+: 1441088222:0;service shadowsocks-libev restart
+: 1441088231:0;service shadowsocks-libev status
+: 1441088241:0;npg ss-server
+: 1441088255:0;npg ss-local
+: 1441088348:0;vi /etc/hosts
+: 1441088383:0;vi /etc/shadowsocks-libev/config.json
+: 1441088486:0;service shadowsocks-libev restart
+: 1441088493:0;npg ss-server
+: 1441088507:0;npg ss-local
+: 1441088830:0;vi test.sh
+: 1441089106:0;l
+: 1441089108:0;ll
+: 1441089116:0;vi test.sh
+: 1441089500:0;cp /etc/shadowsocks-libev/config.json /etc/shadowsocks-libev/config1.json
+: 1441089511:0;cp /etc/shadowsocks-libev/config.json /etc/shadowsocks-libev/config2.json
+: 1441089575:0;vi /etc/shadowsocks-libev/config1.json
+: 1441089623:0;vi /etc/shadowsocks-libev/config2.json
+: 1441089657:0;chmod +x test.sh
+: 1441089666:0;./test.sh
+: 1441089674:0;l
+: 1441089688:0;ll
+: 1441089702:0;vi nohup.out
+: 1441090105:0;vi /etc/shadowsocks-libev/config1.json
+: 1441090206:0;kill 7119
+: 1441090232:0;npg ss-local
+: 1441090256:0;./test.sh
+: 1441090260:0;l
+: 1441090267:0;ll
+: 1441090306:0;vi nohup.out
+: 1441090414:0;vi test.sh
+: 1441090666:0;ss-server -h
+: 1441090694:0;npg ss-server
+: 1441090707:0;kill 6937
+: 1441090715:0;npg ss-local
+: 1441090725:0;kill 658
+: 1441090733:0;npg ss-local
+: 1441090740:0;kill 7164
+: 1441090746:0;npg ss-local
+: 1441090752:0;kill 7163
+: 1441090756:0;npg ss-local
+: 1441090771:0;npg ss-server
+: 1441090790:0;./test.sh
+: 1441090794:0;l
+: 1441090798:0;ll
+: 1441090804:0;vi nohup.out
+: 1441090842:0;npg ss-server
+: 1441090849:0;kill 7252
+: 1441090857:0;kill 7250
+: 1441090863:0;npg ss-server
+: 1441090874:0;npg ss-local
+: 1441090884:0;kill 7251
+: 1441090890:0;kill 7253
+: 1441090895:0;npg ss-local
+: 1441090941:0;vi /etc/shadowsocks-libev/config1.json
+: 1441091047:0;vi /etc/shadowsocks-libev/config2.json
+: 1441091095:0;./test.sh
+: 1441091107:0;vi nohup.out
+: 1441091222:0;vi test.sh
+: 1441091351:0;rm .test.sh.swp
+: 1441091363:0;ll
+: 1441091369:0;rm nohup.out
+: 1441091395:0;npg ss-server
+: 1441091412:0;kill 7327
+: 1441091422:0;kill 7329
+: 1441091434:0;npg ss-server
+: 1441091443:0;npg ss-local
+: 1441091453:0;kill 7328
+: 1441091462:0;kill 7330
+: 1441091471:0;npg ss-local
+: 1441091629:0;./test.sh
+: 1441091666:0;l
+: 1441091670:0;ll
+: 1441093524:0;vi test.sh
+: 1441093557:0;npg ss-server
+: 1441093620:0;npg ss-local
+: 1441093816:0;cat /etc/rc.local test.sh /etc/rc.local
+: 1441093859:0;cat /etc/rc.local test.sh > /etc/rc.local
+: 1441093869:0;cat /etc/rc.local test.sh > /etc/rc.local1
+: 1441093876:0;cd /etc
+: 1441093879:0;ll
+: 1441093921:0;chmod +x rc.local1
+: 1441093925:0;ll
+: 1441093944:0;vi rc.local1
+: 1441094005:0;cat rc.local rc.local1 > rc.local2
+: 1441094007:0;l
+: 1441094039:0;vi rc.local2
+: 1441094066:0;vi rc.local
+: 1441094132:0;cd init.d
+: 1441094133:0;l
+: 1441094148:0;vi rc.local
+: 1441094206:0;cd ..
+: 1441094232:0;vi rc.local
+: 1441094413:0;ll
+: 1441094433:0;rm rc.local1
+: 1441094443:0;rm rc.local2
+: 1441094451:0;rm rc.local3
+: 1441094459:0;ll
+: 1441094503:0;cd rc0.d
+: 1441094506:0;l
+: 1441094592:0;vi K01cloud-init-local
+: 1441094690:0;cd
+: 1441094698:0;shutdown -r now
+: 1441094897:0;npg ss-local
+: 1441094939:0;npg ss-server
+: 1441095043:0;ifconfig
+: 1441095087:0;cd /etc/firewalld/services
+: 1441095090:0;l
+: 1441095109:0;vi alex.xml
+: 1441095134:0;cd /usr/lib/firewalld/services
+: 1441095137:0;l
+: 1441095157:0;vi dhcpv6-client.xml
+: 1441095188:0;vi proxy-dhcp.xml
+: 1441095223:0;vi dhcpv6.xml
+: 1441095258:0;fcdmp --add-service=dhcp
+: 1441095267:0;fcdmp --add-service=dhcpv6
+: 1441095271:0;fcdrd
+: 1441095277:0;fcdla
+: 1441095354:0;fcdmp --remove-forward-port=port=23:proto=tcp:toaddr=10.134.31.74
+: 1441095359:0;fcdrd
+: 1441095364:0;fcdla
+: 1441095888:0;vi /etc/security/limits.conf
+: 1441096023:0;vi /etc/sysctl.conf
+: 1441096059:0;sysctl -p
+: 1441096103:0;vi /etc/pam.d/common-session
+: 1441096171:0;reboot
+: 1441096201:0;ll
+: 1441096211:0;npg ss-local
+: 1441096267:0;fcdmp --add-forward-port=port=1080:proto=tcp:toport=27
+: 1441096271:0;fcdrd
+: 1441096277:0;fcdla
+: 1441096298:0;fcdmp --add-forward-port=port=1080:proto=udp:toport=27
+: 1441096303:0;fcdrd
+: 1441096308:0;fcdla
+: 1441096345:0;npg ss-local
+: 1441096600:0;cd /usr/local/lib/python2.7/dist-packages/gfwlist2pac/resources
+: 1441096606:0;vi builtin.txt
+: 1441096631:0;cd
+: 1441096639:0;cd github/blxu/ios.pac
+: 1441096640:0;l
+: 1441096645:0;./test.sh
+: 1441096652:0;ll
+: 1441096703:0;cd
+: 1441096710:0;npg ss-local
+: 1441096936:0;cd github
+: 1441096939:0;ll
+: 1441096943:0;cd alextsui0510
+: 1441096946:0;cd alextsui0510.github.io
+: 1441096950:0;l
+: 1441096955:0;vi index.html
+: 1441097034:0;./test.sh
+: 1441097323:0;apt-get install autojump
+: 1441097338:0;cd github/blxu/ios.pac
+: 1441097339:0;l
+: 1441097343:0;./test.sh
+: 1441097371:0;cd ..
+: 1441097379:0;cd alextsui0510/ios.pac
+: 1441097380:0;l
+: 1441097386:0;./test.sh
+: 1441099984:0;cd github/blxu/blxu.github.io
+: 1441099986:0;l
+: 1441099992:0;vi CNAME
+: 1441100018:0;vi index.html
+: 1441100092:0;./test.sh
+: 1441100101:0;git pull
+: 1441100131:0;git pull - u origin master
+: 1441100142:0;git add --all .
+: 1441100158:0;git commit -m "pull"
+: 1441100164:0;git pull - u origin master
+: 1441100172:0;git pull -u origin master
+: 1441100182:0;./test.sh
+: 1441101438:0;j ios
+: 1441101449:0;cd github/blxu/ios.pac
+: 1441101451:0;l
+: 1441101460:0;cd ..
+: 1441101465:0;cd blxu.github.io
+: 1441101469:0;vi index.html
+: 1441101521:0;./test.sh 
+: 1441101572:0;vi index.html
+: 1441101625:0;./test.sh
+: 1441101742:0;cd ..
+: 1441101746:0;cd ios.pac
+: 1441101748:0;l
+: 1441101755:0;vi myrule.txt
+: 1441101779:0;./test.sh
+: 1441101836:0;j bl__
+: 1441101840:0;cd blxu.github.io
+: 1441101844:0;vi index.html
+: 1441101907:0;./test.sh
+: 1441102019:0;j ios
+: 1441102022:0;l
+: 1441102026:0;vi myrule.txt
+: 1441102043:0;vi test.sh
+: 1441102123:0;./test.sh
+: 1441107817:0;ll
+: 1441107846:0;vi /etc/rc.local
+: 1441107889:0;cd .shadowsocks-libev
+: 1441107893:0;l
+: 1441107929:0;mv /etc/init.d/shadowsocks-libev .
+: 1441107931:0;l
+: 1441107943:0;cd
+: 1441107946:0;l
+: 1441107948:0;ll
+: 1441107954:0;vi test.sh
+: 1441107982:0;mv test.sh .source
+: 1441107985:0;ll
+: 1441107989:0;cd github
+: 1441107991:0;l
+: 1441108035:0;cd blxu
+: 1441108072:0;cd ..
+: 1441108074:0;ll
+: 1441108084:0;cd alextsui0510
+: 1441108087:0;l
+: 1441108099:0;cd alextsui0510.github.io
+: 1441108101:0;l
+: 1441108107:0;vi CNAME
+: 1441108135:0;vi index.html
+: 1441108267:0;./test.sh
+: 1441109396:0;ll
+: 1441109399:0;xs github
+: 1441109403:0;cd github
+: 1441109405:0;cd alextsui0510
+: 1441109407:0;cd alextsui0510.github.io
+: 1441109409:0;ll
+: 1441109413:0;rm -rf CNAME
+: 1441109416:0;vi index.html
+: 1441109809:0;./test.sh
+: 1441109997:0;vi index.html
+: 1441110144:0;./test.sh
+: 1441110177:0;vi index.html
+: 1441110224:0;./test.sh
+: 1441110254:0;vi index.html
+: 1441110364:0;./test.sh
+: 1441110529:0;cd
+: 1441110530:0;ll
+: 1441110538:0;npg ss-local
+: 1441110564:0;fcdla
+: 1441110610:0;npg ss-local
+: 1441110658:0;ss -ln
+: 1441110867:0;git clone ssh://55e203982d5271b90c0000fc@alexpy-alextsui.rhcloud.com/~/git/alexpy.git/
+: 1441110914:0;cd .ssh
+: 1441110917:0;l
+: 1441110925:0;vi id_rsa
+: 1441110930:0;vi id_rsa.pub
+: 1441110937:0;vi authorized_keys
+: 1441110988:0;cp ../github/alextsui0510/certificates/id_rsa ./authorized_keys.private
+: 1441110995:0;vi authorized_keys.private
+: 1441110999:0;ll
+: 1441111008:0;chmod 400 authorized_keys.private
+: 1441111009:0;ll
+: 1441111016:0;vi config
+: 1441111236:0;cd
+: 1441111289:0;git clone alexpy/~/git/alexpy.git/
+: 1441111316:0;git clone ssh://55e203982d5271b90c0000fc@alexpy-alextsui.rhcloud.com/~/git/alexpy.git/
+: 1441111335:0;git clone -h
+: 1441111829:0;git clone ssh://55e59e1c2d527199e30000bd@alexos-alextsui.rhcloud.com/~/git/alexos.git/
+: 1441111890:0;ssh-keygen -C "alexxu0150@gmail.com" -t rsa
+: 1441111910:0;ll
+: 1441111918:0;mv id* .ssh/
+: 1441111923:0;cd .ssh
+: 1441111925:0;ll
+: 1441111937:0;vi id_rsa4.pub
+: 1441111968:0;cd
+: 1441111976:0;git clone ssh://55e59e1c2d527199e30000bd@alexos-alextsui.rhcloud.com/~/git/alexos.git/
+: 1441112581:0;ll
+: 1441112586:0;cd .source
+: 1441112587:0;ll
+: 1441112593:0;la
+: 1441112607:0;vi .zshrc
+: 1441112815:0;vi .vimrc
+: 1441113585:0;vi .zshrc
+: 1441114367:0;fcdmp --add-forward-port=port=8388:proto=udp:toport=21
+: 1441114371:0;fcdmp --add-forward-port=port=8388:proto=udp:toport=25
+: 1441114377:0;fcdla
+: 1441114380:0;fcdrd
+: 1441114385:0;fcdla
+: 1441117436:0;ll
+: 1441117854:0;ss -ln
+: 1441117880:0;netstat -anp
+: 1441118763:0;fcdmp --remove-forward-port=port=8388:proto=udp:toport=21
+: 1441118766:0;fcdmp --remove-forward-port=port=8388:proto=udp:toport=25
+: 1441118769:0;fcdla
+: 1441118771:0;fcdrd
+: 1441118776:0;fcdla
+: 1441118806:0;fcdmp --remove-forward-port=port=1080:proto=udp:toport=23
+: 1441118809:0;fcdmp --remove-forward-port=port=1080:proto=udp:toport=27
+: 1441118813:0;fcdrd
+: 1441118816:0;fcdla
+: 1441118852:0;fcdmp --add-forward-port=port=8388:proto=tcp:toport=21
+: 1441118857:0;fcdmp --add-forward-port=port=8388:proto=tcp:toport=25
+: 1441118863:0;fcdrd
+: 1441118866:0;fcdla
+: 1441118973:0;npg ss-server
+: 1441118991:0;kill 721
+: 1441118994:0;kill 723
+: 1441119004:0;vi /etc/shadowsocks-libev/config1.json
+: 1441119040:0;vi /etc/shadowsocks-libev/config2.json
+: 1441119077:0;vi /etc/rc.local
+: 1441119125:0;for i in 1 2\
+do\
+nohup setsid ss-server -c /etc/shadowsocks-libev/config${i}.json -u > /var/log/ss-server${i}.log &\
+done
+: 1441119148:0;npg ss-server
+: 1441119330:0;fcdmp --add-forward-port=port=8388:proto=tcp:toport=21-25
+: 1441119366:0;fcdmp --remove-forward-port=port=8388:proto=udp:toport=21
+: 1441119376:0;fcdmp --remove-forward-port=port=8388:proto=tcp:toport=21
+: 1441119378:0;fcdmp --remove-forward-port=port=8388:proto=tcp:toport=25
+: 1441119381:0;fcdrd
+: 1441119386:0;fcdla
+: 1441119447:0;npg ss-server
+: 1441119494:0;fcdmp --remove-forward-port=port=1080:proto=tcp:toport=23
+: 1441119497:0;fcdmp --remove-forward-port=port=1080:proto=tcp:toport=27
+: 1441119515:0;fcdmp --add-forward-port=port=1080:proto=tcp:toport=23-27
+: 1441119520:0;fcdrd
+: 1441119523:0;fcdla
+: 1441119596:0;vi /etc/shadowsocks-libev/config2.json
+: 1441119625:0;vi /etc/shadowsocks-libev/config1.json
+: 1441119657:0;npg ss-local
+: 1441119665:0;kill 722
+: 1441119670:0;kill 724
+: 1441119672:0;npg ss-local
+: 1441119681:0;npg ss-server
+: 1441119688:0;kill 5497
+: 1441119691:0;kill 5498
+: 1441119693:0;npg ss-server
+: 1441119715:0;fcdmp --remove-forward-port=port=1080:proto=tcp:toport=23-27
+: 1441119728:0;fcdmp --add-forward-port=port=1080:proto=tcp:toport=25-27
+: 1441119745:0;fcdmp --add-forward-port=port=8388:proto=tcp:toport=21-23
+: 1441119766:0;fcdmp --remove-forward-port=port=8388:proto=tcp:toport=21-25
+: 1441119769:0;fcdrd
+: 1441119773:0;fcdla
+: 1441119785:0;vi /etc/rc.local
+: 1441119803:0;for i in 1 2\
+do\
+nohup setsid ss-server -c /etc/shadowsocks-libev/config${i}.json -u > /var/log/ss-server${i}.log &\
+nohup setsid ss-local -c /etc/shadowsocks-libev/config${i}.json -u > /var/log/ss-local${i}.log &\
+done
+: 1441119816:0;npg ss-local
+: 1441119824:0;npg ss-server
+: 1441120128:0;npg ss-local
+: 1441120346:0;cd github
+: 1441120348:0;cd blxu
+: 1441120349:0;ll
+: 1441120353:0;cd blxu.github.io
+: 1441120354:0;l
+: 1441120359:0;vi index.html
+: 1441120441:0;rm CNAME
+: 1441120444:0;ll
+: 1441120447:0;./test.sh
+: 1441120989:0;ll
+: 1441120991:0;cd ..
+: 1441120993:0;cd ios.pac
+: 1441120994:0;ll
+: 1441121001:0;./test.sh
+: 1441123186:0;cd github/blxu/blxu.github.io
+: 1441123193:0;git pull
+: 1441123198:0;ll
+: 1441123202:0;./test.sh
+: 1441123533:0;vi in	
+: 1441123550:0;vi index.html
+: 1441126934:0;ll
+: 1441126947:0;npg ss-local
+: 1441134816:0;vi /etc/motd
+: 1441134840:0;mv /etc/motd /etc/motd.bak
+: 1441134859:0;vi /etc/motd
+: 1441134931:0;cd /etc
+: 1441134932:0;ll
+: 1441134938:0;ls mot*
+: 1441134952:0;l mot*
+: 1441135091:0;ll
+: 1441135094:0;ls
+: 1441135097:0;l
+: 1441135266:0;vi .Xauthority
+: 1441135284:0;vi .zcompdump-ALEX-5.0.7
+: 1441135308:0;vi .zsh-update
+: 1441135332:0;vi .profile
+: 1441135778:0;l
+: 1441135780:0;ll
+: 1441135804:0;vi /etc/default/shadowsocks-libev
+: 1441136010:0;hostname
+: 1441136017:0;group
+: 1441136026:0;whoami
+: 1441136038:0;pwd
+: 1441136081:0;adduser --help
+: 1441136103:0;user
+: 1441136117:0;locate user
+: 1441136131:0;locale
+: 1441136150:0;cd /etc
+: 1441136151:0;l
+: 1441136187:0;vi aliases
+: 1441136214:0;vi shadow
+: 1441136235:0;cd default
+: 1441136236:0;l
+: 1441136255:0;vi useradd
+: 1441136271:0;cd
+: 1441136273:0;ll
+: 1441136280:0;uname
+: 1441136291:0;uname -i
+: 1441136297:0;uname -h
+: 1441136305:0;uname --help
+: 1441136317:0;uname -a
+: 1441136665:0;apt-get install squid3
+: 1441136686:0;cd /etc/squid3
+: 1441136688:0;mv squid.conf squid.conf.old
+: 1441136690:0;ll
+: 1441136761:0;vi squid.conf
+: 1441136821:0;ll
+: 1441136971:0;service squid3 restart
+: 1441137023:0;service squid3 status
+: 1441137052:0;npg squid3
+: 1441137061:0;npg squid
+: 1441137089:0;vi squid.conf
+: 1441137128:0;service squid3 restart
+: 1441137167:0;service squid3 status
+: 1441137180:0;npg squid
+: 1441137220:0;fcdmp --remove-forward-port=port=1080:proto=tcp:toport=25-27
+: 1441137235:0;fcdmp --remove-forward-port=port=1080:proto=tcp:toport=3128
+: 1441137254:0;fcdmp --add-forward-port=port=1080:proto=tcp:toport=3128
+: 1441137258:0;fcdrd
+: 1441137261:0;fcdla
+: 1441137487:0;fcla
+: 1441137489:0;fcdla
+: 1441137498:0;npg squid
+: 1441137536:0;cd /etc/squid3
+: 1441137537:0;l
+: 1441137546:0;vi squid.conf
+: 1441137583:0;service squid3 restart
+: 1441137622:0;npg squid
+: 1441137648:0;vi squid.conf.old
+: 1441137759:0;npg ss-server
+: 1441137779:0;npg ss-local
+: 1441137820:0;apt-get remove squid3
+: 1441137925:0;apt-get autoremove
+: 1441137937:0;cd /etc
+: 1441137938:0;l
+: 1441137943:0;cd squid3
+: 1441137944:0;l
+: 1441137950:0;cd ..
+: 1441137958:0;rm -rf squid3
+: 1441137964:0;cd default
+: 1441137965:0;l
+: 1441138002:0;vi shadowsocks-libev
+: 1441138031:0;cd
+: 1441138038:0;cd /var/lib
+: 1441138039:0;l
+: 1441138079:0;cd
+: 1441138093:0;cd /etc/init.d
+: 1441138094:0;l
+: 1441138104:0;rm -rf squid3
+: 1441138115:0;vi networking
+: 1441138142:0;ll
+: 1441138159:0;vi hostname.sh
+: 1441138192:0;ll
+: 1441138214:0;vi rc.local
+: 1441138286:0;vi ebtables
+: 1441138340:0;cp /root/.shadowsocks-libev/shadowsocks-libev .
+: 1441138343:0;ll
+: 1441138353:0;vi shadowsocks-libev
+: 1441138562:0;vi /etc/rc.local
+: 1441138595:0;reboot
+: 1441138628:0;fcdla
+: 1441138669:0;fcdmp --remove-forward-port=port=1080:proto=tcp:toport=3128
+: 1441138700:0;fcdmp --add-forward-port=port=1080:proto=tcp:toport25
+: 1441138710:0;fcdmp --add-forward-port=port=1080:proto=tcp:toport=25
+: 1441138714:0;fcdrd
+: 1441138717:0;fcdla
+: 1441138735:0;npg ss-local
+: 1441138751:0;kill 719
+: 1441138763:0;vi /etc/rc.local
+: 1441138900:0;ll
+: 1441138926:0;cd /etc/shadowsocks-libev
+: 1441138927:0;l
+: 1441138936:0;vi config.json
+: 1441138958:0;fcdmp --add-forward-port=port=1080:proto=tcp:toport=23
+: 1441138973:0;fcdmp --remove-forward-port=port=1080:proto=tcp:toport=25
+: 1441138976:0;fcdrd
+: 1441138980:0;fcdla
+: 1441139008:0;fcdmp --remove-forward-port=port=8388:proto=tcp:toport=21-23
+: 1441139011:0;fcdrd
+: 1441139014:0;fcdla
+: 1441139236:0;npg ss-local
+: 1441139246:0;fcdla
+: 1441139251:0;reboot
+: 1441139319:0;npg ss-local
+: 1441139330:0;npg ss-server
+: 1441139352:0;vi /etc/init.d
+: 1441139371:0;cd /etc/init.d
+: 1441139372:0;l
+: 1441139385:0;chmod +x shadowsocks-libev
+: 1441139387:0;ll
+: 1441139406:0;service shadowsocks-libev start
+: 1441139414:0;service shadowsocks-libev status
+: 1441139430:0;npg ss-server
+: 1441139438:0;npg ss-locak
+: 1441139441:0;npg ss-local
+: 1441139483:0;q
+: 1441139487:0;cd
+: 1441139490:0;reboot
+: 1441139518:0;npg ss-server
+: 1441139545:0;vi /etc/rc.local
+: 1441139563:0;vi /etc/init
+: 1441139573:0;cd /etc/init
+: 1441139574:0;l
+: 1441139589:0;vi ssh.conf
+: 1441139627:0;locate shadowsocks-libev.conf
+: 1441139635:0;cd ..
+: 1441139639:0;cd default
+: 1441139640:0;l
+: 1441139645:0;vi shadowsocks-libev
+: 1441139672:0;cd ..
+: 1441139675:0;cd init
+: 1441139676:0;l
+: 1441139688:0;vi networking.conf
+: 1441139750:0;cp ../init.d/shadowsocks-libev ./shadowsocks-libev.conf
+: 1441139754:0;l
+: 1441139773:0;chmod 644 shadowsocks-libev.conf
+: 1441139774:0;ll
+: 1441139780:0;reboot
+: 1441139814:0;ss -ln
+: 1441139824:0;cd
+: 1441139845:0;vi /etc/services
+: 1441139930:0;cd
+: 1441139934:0;cd .shadowsocks-libev
+: 1441139935:0;ll
+: 1441139950:0;vi shadowsocks-libev
+: 1441139991:0;cd /etc
+: 1441139993:0;l
+: 1441140006:0;cd rc0.d
+: 1441140007:0;l
+: 1441140036:0;cd ..
+: 1441140046:0;cd rc1.d
+: 1441140048:0;ll
+: 1441140057:0;cd ..
+: 1441140061:0;cd rc2.d
+: 1441140062:0;ll
+: 1441140078:0;cd ..
+: 1441140079:0;ll
+: 1441140092:0;cd rc6.d
+: 1441140093:0;ll
+: 1441140186:0;ln -s ../init.d/shadowsocks-libev K01shadowsocks-libev
+: 1441140188:0;l
+: 1441140203:0;cd ..
+: 1441140208:0;cd rc5
+: 1441140213:0;cd rc5.d
+: 1441140214:0;l
+: 1441140243:0;ln -s ../init.d/shadowsocks-libev S02shadowsocks-libev
+: 1441140245:0;l
+: 1441140258:0;cd ../rc4.d
+: 1441140259:0;ll
+: 1441140267:0;ln -s ../init.d/shadowsocks-libev S02shadowsocks-libev
+: 1441140276:0;cd ../rc3.d
+: 1441140278:0;ll
+: 1441140293:0;ln -s ../init.d/shadowsocks-libev S02shadowsocks-libev
+: 1441140303:0;cd ../rc2.d
+: 1441140304:0;l
+: 1441140311:0;ln -s ../init.d/shadowsocks-libev S02shadowsocks-libev
+: 1441140321:0;cd ../rc1.d
+: 1441140322:0;l
+: 1441140342:0;ln -s ../init.d/shadowsocks-libev K01shadowsocks-libev
+: 1441140351:0;cd ../rc0.d
+: 1441140353:0;l
+: 1441140359:0;ln -s ../init.d/shadowsocks-libev K01shadowsocks-libev
+: 1441140361:0;l
+: 1441140368:0;reboot
+: 1441140529:0;ss -ln
+: 1441140546:0;npg ss-se
+: 1441140562:0;npg ss-local
+: 1441140611:0;vi /etc/rc.local
+: 1441140628:0;cd /etc
+: 1441140649:0;cd rc0.d/l
+: 1441140656:0;cd rc0.d
+: 1441140662:0;l
+: 1441140673:0;ls *squid
+: 1441140683:0;ls *squid*
+: 1441140699:0;rm  *squid*
+: 1441140710:0;cd ../
+: 1441140724:0;cd rc1.d
+: 1441140728:0;rm  *squid*
+: 1441140744:0;cd ../
+: 1441140757:0;cd rc2.d
+: 1441140762:0;rm  *squid*
+: 1441140776:0;cd ../rc3.d
+: 1441140780:0;rm  *squid*
+: 1441140792:0;cd ../rc4.d
+: 1441140795:0;rm  *squid*
+: 1441140814:0;cd ../rc5.d
+: 1441140817:0;rm  *squid*
+: 1441140830:0;cd ../rc6.d
+: 1441140833:0;rm  *squid*
+: 1441140840:0;cd ..
+: 1441140842:0;ll
+: 1441140857:0;cd rc0.d/l
+: 1441140860:0;cd rc0.d/
+: 1441140861:0;l
+: 1441140879:0;cd
+: 1441171998:0;date
+: 1441172014:0;cd /etc
+: 1441172016:0;ll
+: 1441172025:0;ls time*
+: 1441172034:0;ls *time*
+: 1441172044:0;vi localtime
+: 1441172078:0;localtime -h
+: 1441172110:0;date 
+: 1441172117:0;date -h
+: 1441172122:0;date --help
+: 1441172176:0;date %c
+: 1441172181:0;date c
+: 1441172185:0;date -c
+: 1441172251:0;date -u %c
+: 1441172258:0;date -u
+: 1441172266:0;date -d
+: 1441172330:0;cd time
+: 1441172335:0;locate tume
+: 1441172346:0;locate time
+: 1441172414:0;vi /etc/security/time.conf
+: 1441172484:0;cd security
+: 1441172486:0;l
+: 1441172496:0;cd
+: 1441172513:0;cd /etc/init.d
+: 1441172517:0;l
+: 1441172546:0;cd ..
+: 1441172547:0;l
+: 1441172563:0;vi sysctl.conf
+: 1441172579:0;ll
+: 1441172588:0;locate time
+: 1441172597:0;time
+: 1441172604:0;locate date
+: 1441172706:0;locate login
+: 1441172750:0;vi /etc/systemd/logind.conf
+: 1441172770:0;date --help
+: 1441172874:0;vi /etc/ssh/sshd_config
+: 1441172952:0;cd /var/log
+: 1441172953:0;ll
+: 1441172959:0;vi lastlog
+: 1441172971:0;cd ..
+: 1441172972:0;l
+: 1441172981:0;cd lib/ub
+: 1441172986:0;cd lib
+: 1441172988:0;l
+: 1441173020:0;cd systemd
+: 1441173022:0;l
+: 1441173027:0;cd
+: 1441173031:0;locate lastlog
+: 1441173051:0;lastlog -h
+: 1441173081:0;lastlog -u
+: 1441173113:0;laslog --user root
+: 1441173123:0;lastlog --user root
+: 1441173187:0;lastlog --time today
+: 1441173194:0;lastlog --time days
+: 1441173297:0;last
+: 1441173368:0;lastlog
+: 1441173399:0;utmp
+: 1441173402:0;who
+: 1441173422:0;wtmp
+: 1441173425:0;messages
+: 1441173572:0;date +â€ƒ½Day : %d Month : %m Year : %Yâ€ƒ½
+: 1441173621:0;date + "Day : %d Month : %m Year : %Y"
+: 1441173636:0;date "Day : %d Month : %m Year : %Y"
+: 1441173715:0;date +â€ƒ½%a %b %d %yâ€ƒ½
+: 1441173730:0;date + %a %b %d %y
+: 1441173760:0;date + %D
+: 1441173764:0;date +%D
+: 1441173798:0;date +%a%b%d%y
+: 1441173846:0;date +%y%b%a
+: 1441173873:0;date +%y%d%b%a
+: 1441173898:0;d
+: 1441173907:0;date -R
+: 1441174006:0;date +%y:%b:%d,%a 
+: 1441174030:0;date +20%y:%b:%d,%a 
+: 1441174071:0;date +20%y,%b,%d,%a 
+: 1441174094:0;date
+: 1441174103:0;date +20%y,%b,%d,%a 
+: 1441174107:0;date
+: 1441174206:0;date --set="date +20%y,%b,%d,%a"
+: 1441174217:0;date --set="+20%y,%b,%d,%a"
+: 1441174226:0;man date
+: 1441174360:0;latlog --help
+: 1441174366:0;lastlog --help
+: 1441174378:0;man lastlog
+: 1441174412:0;vi /etc/passwd
+: 1441174484:0;vi /etc/shadow
+: 1441187794:0;apt-get install ruby-gems
+: 1441187878:0;gem install github-pages
+: 1441187895:0;apt-get install gems
+: 1441187904:0;gem install github-pages
+: 1441187915:0;apt-get install gem
+: 1441188014:0;gem install github-pages
+: 1441188033:0;apt-get remove gem
+: 1441188132:0;git clone https://github.com/rubygems/rubygems.git
+: 1441188148:0;cd rubygems
+: 1441188150:0;ll
+: 1441188231:0;ruby setup.rb
+: 1441188275:0;apt-get install ruby
+: 1441188286:0;ruby setup.rb
+: 1441188379:0;gem update --system
+: 1441188389:0;cd
+: 1441188396:0;gem -h
+: 1441188409:0;gem install jekyll
+: 1441188480:0;vi .zshrc
+: 1441188634:0;source .zshrc
+: 1441188651:0;gem install jekyll
+: 1441188748:0;gem install github-pages
+: 1441188815:0;vi .zshrc
+: 1441188863:0;source .zshrc
+: 1441188873:0;gem install github-pages
+: 1441188958:0;cd rubygems
+: 1441188960:0;ll
+: 1441188976:0;gem update --system
+: 1441189029:0;apt-get upgrade ruby
+: 1441189050:0;apt-get autoremove
+: 1441189070:0;ll
+: 1441189099:0;cd ..
+: 1441189103:0;ll
+: 1441189107:0;l
+: 1441189110:0;ll
+: 1441189119:0;cd rubygems
+: 1441189122:0;ll
+: 1441189180:0;ruby install bundler
+: 1441189189:0;gem install bundler
+: 1441189236:0;gem install github-pages
+: 1441189272:0;cd
+: 1441189288:0;apt-get install gems
+: 1441189302:0;apt-get install ruby
+: 1441189488:0;$ git clone git://github.com/parkr/ruby-build-github.git "$(rbenv root)/plugins/ruby-build-github"
+: 1441189522:0;apt-get install rbenv
+: 1441189565:0;$ git clone git://github.com/parkr/ruby-build-github.git "$(rbenv root)/plugins/ruby-build-github"
+: 1441189587:0;git clone git://github.com/parkr/ruby-build-github.git "$(rbenv root)/plugins/ruby-build-github"
+: 1441189591:0;ll
+: 1441189664:0;rbenv install jekyll
+: 1441189705:0;apt-get install rbenv
+: 1441189716:0;rbenv -h
+: 1441189753:0;rbenv commands
+: 1441189795:0;rbenv install jekyll
+: 1441189810:0;l
+: 1441189819:0;cu .rbenv
+: 1441189827:0;cd .rbenv
+: 1441189828:0;l
+: 1441189832:0;cd plugins
+: 1441189834:0;ll
+: 1441189856:0;vi ruby-build-github
+: 1441189863:0;cd ruby-build-github
+: 1441189865:0;l
+: 1441189871:0;./install.sh
+: 1441189890:0;vi README.md
+: 1441189925:0;cd share
+: 1441189926:0;l
+: 1441189931:0;cd ruby-build
+: 1441189933:0;l
+: 1441189939:0;cd ..
+: 1441189941:0;ll
+: 1441189949:0;cd ..
+: 1441189950:0;l
+: 1441189968:0;apt-get install autoconf
+: 1441189983:0;apt-get install bison
+: 1441189998:0;./install.sh
+: 1441190008:0;vi install.sh
+: 1441190042:0;rbenv install
+: 1441190050:0;rbenv -h
+: 1441190092:0;rbenv which
+: 1441190110:0;rbenv local
+: 1441190115:0;cd
+: 1441190121:0;vi .zshrc
+: 1441190851:0;cd 
+: 1441190860:0;vi .zshrc
+: 1441190975:0;source .zshrc
+: 1441190978:0;ll
+: 1441191031:0;gem install github-pages
+: 1441191068:0;cd /var/lib
+: 1441191070:0;ll
+: 1441191095:0;cd gems
+: 1441191096:0;ll
+: 1441191101:0;cd 2.1.0
+: 1441191102:0;l
+: 1441191117:0;cd 
+: 1441191130:0;vi .zshrc
+: 1441191217:0;cd /var/lib/gems
+: 1441191219:0;l
+: 1441191226:0;cd 2.1.0
+: 1441191228:0;l
+: 1441191236:0;cd gems
+: 1441191238:0;l
+: 1441191251:0;cd yajl-ruby-1.2.1
+: 1441191253:0;l
+: 1441191279:0;cd
+: 1441191285:0;cd .oh-my-zsh
+: 1441191287:0;ll
+: 1441191291:0;cd plugins
+: 1441191292:0;ll
+: 1441191310:0;cd ruby
+: 1441191312:0;ll
+: 1441191325:0;vi ruby.plugin.zsh
+: 1441191337:0;pwd
+: 1441191433:0;which rbenv
+: 1441191448:0;cd /usr/lib
+: 1441191450:0;ll
+: 1441191469:0;cd rbenv
+: 1441191470:0;ll
+: 1441191479:0;pwd
+: 1441191599:0;mkdir plugins
+: 1441191674:0;git clone git://github.com/parkr/ruby-build-github.git /usr/lib/rbenv/plugins/ruby-build-github
+: 1441191677:0;l
+: 1441191688:0;cd plugins
+: 1441191689:0;l
+: 1441191703:0;vi ruby-build-github
+: 1441191713:0;cd ruby-build-github
+: 1441191714:0;l
+: 1441191723:0;./install.sh
+: 1441191756:0;./install.sh /root/.oh-my-zsh/plugins
+: 1441191777:0;vi install.sh
+: 1441191814:0;install.sh
+: 1441191817:0;ll
+: 1441191827:0;cd share
+: 1441191828:0;l
+: 1441191833:0;cd ruby-build
+: 1441191835:0;l
+: 1441191877:0;ruby-build install github-pages
+: 1441191904:0;apt-get install ruby-build
+: 1441191923:0;ruby-build install github-pages
+: 1441191943:0;ruby-build -h
+: 1441192018:0;rbenv -h
+: 1441192028:0;rbenv install
+: 1441192106:0;rbenv install github-pages
+: 1441192121:0;rbenv install --list
+: 1441192222:0;rbenv install --list | grep github
+: 1441192254:0;rbenv install 2.1.6-github1
+: 1441193006:0;cd
+: 1441193022:0;rbenv install github-pages
+: 1441193056:0;cd rubygems
+: 1441193057:0;l
+: 1441193066:0;ruby setup.rb
+: 1441193119:0;gem install jekyll
+: 1441193167:0;cd
+: 1441193173:0;vi .zshrc
+: 1441193272:0;source .zshrc
+: 1441193291:0;gem install jekyll
+: 1441193311:0;vi .zshrc
+: 1441193365:0;source .zshrc
+: 1441193374:0;which gem
+: 1441193381:0;which ruby
+: 1441193388:0;gem install jekyll
+: 1441193466:0;cd /usr/lib
+: 1441193470:0;ll
+: 1441193479:0;cd rbenv
+: 1441193480:0;l
+: 1441193487:0;cd ..
+: 1441193490:0;cd ruby
+: 1441193491:0;ll
+: 1441193499:0;cd gems
+: 1441193501:0;ll
+: 1441193506:0;cd 2.1.0
+: 1441193507:0;l
+: 1441193514:0;cd gems
+: 1441193514:0;l
+: 1441193518:0;cd ..
+: 1441193528:0;cd 2.1.0
+: 1441193529:0;l
+: 1441193534:0;pwd
+: 1441193558:0;cd rubygems
+: 1441193559:0;l
+: 1441193564:0;cd bin
+: 1441193565:0;l
+: 1441193569:0;pwd
+: 1441193585:0;cd /usr/
+: 1441193586:0;l
+: 1441193603:0;cd local
+: 1441193604:0;l
+: 1441193610:0;cd lib
+: 1441193611:0;l
+: 1441193615:0;cd site_ruby
+: 1441193616:0;l
+: 1441193621:0;cd 2.1.0
+: 1441193622:0;l
+: 1441193626:0;cd rubygems
+: 1441193627:0;l
+: 1441193646:0;cd
+: 1441193657:0;cd /var
+: 1441193659:0;ll
+: 1441193665:0;cd lib
+: 1441193666:0;l
+: 1441193685:0;cd gems
+: 1441193687:0;l
+: 1441193693:0;cd 2.1.0
+: 1441193694:0;l
+: 1441193701:0;cd gems
+: 1441193703:0;l
+: 1441193723:0;vi yajl-ruby-1.2.1
+: 1441193810:0;git clone git://github.com/parkr/ruby-build-github.git
+: 1441193813:0;l
+: 1441193821:0;cd ruby-build-github
+: 1441193822:0;l
+: 1441193826:0;cd 
+: 1441193871:0;cd /var/lib/gems/2.1.0/
+: 1441193872:0;l
+: 1441193876:0;cd gems
+: 1441193877:0;l
+: 1441193888:0;cd ruby-build-github
+: 1441193889:0;l
+: 1441193893:0;./install.sh
+: 1441193899:0;./install.sh .
+: 1441193961:0;rbenv install 2.1.6-github1
+: 1441194002:0;cd
+: 1441194012:0;vi .zshrc
+: 1441194095:0;source .zshrc
+: 1441194109:0;cd .rbenv
+: 1441194111:0;l
+: 1441194117:0;cd plugins
+: 1441194118:0;l
+: 1441194124:0;cd ruby-build-github
+: 1441194125:0;l
+: 1441194130:0;cd share
+: 1441194132:0;l
+: 1441194136:0;cd ruby-build
+: 1441194138:0;l
+: 1441194155:0;vi 2.1.6-github1
+: 1441194213:0;rbenv install 2.1.6-github1
+: 1441194220:0;cd
+: 1441194232:0;source .zshrv
+: 1441194236:0;source .zshrc
+: 1441194247:0;gem install jekyll
+: 1441194301:0;locate ruby
+: 1441194371:0;cd /usr/lib
+: 1441194372:0;l
+: 1441194378:0;cd ruby
+: 1441194379:0;ll
+: 1441194383:0;cd gems
+: 1441194384:0;l
+: 1441194390:0;cd
+: 1441194411:0;locate gem
+: 1441194495:0;cd rubygems
+: 1441194495:0;l
+: 1441194503:0;ruby setup.rb
+: 1441194535:0;cd
+: 1441194540:0;vi .zshrc
+: 1441194615:0;source .zshrc
+: 1441194627:0;cd rubygems
+: 1441194633:0;ruby setup.rb
+: 1441194671:0;gem help env
+: 1441194749:0;gem env gemdir
+: 1441194784:0;:q
+: 1441194787:0;cd
+: 1441194798:0;gem install jekyll
+: 1441194832:0;locate ruby.g
+: 1441194841:0;locate ruby.h
+: 1441194856:0;locate *ruby.h
+: 1441194865:0;locate *ruby
+: 1441194886:0;locate ruby*
+: 1441195013:0;apt-get autoremove
+: 1441195017:0;ll
+: 1441195033:0;gem remove bundler
+: 1441195049:0;gem uninstall bundler
+: 1441195102:0;rbenv uninstall 2.1.6-github1
+: 1441195108:0;l
+: 1441195126:0;apt-get remove rbenv
+: 1441195207:0;apt-get remove gem
+: 1441195211:0;apt-get remove gems
+: 1441195227:0;apt-get remove rubygems
+: 1441195237:0;apt-get remove ruby
+: 1441195251:0;apt-get autoremove
+: 1441195258:0;l
+: 1441195281:0;rm -rf rubygems
+: 1441195293:0;rm -rf .gem
+: 1441195307:0;rm -rf .rbenv
+: 1441195309:0;l
+: 1441195566:0;apt-get autoremove
+: 1441195746:0;ll
+: 1441195749:0;ls
+: 1441195752:0;l
+: 1441195966:0;dpkg -l |grep "^rc"|awk '{print $2}' |xargs aptitude -y purge
+: 1441196032:0;rm -rf /var/spool/squid3/
+: 1441196042:0;dpkg -l |grep "^rc"|awk '{print $2}' |xargs aptitude -y purge
+: 1441196054:0;ll
+: 1441196058:0;l
+: 1441196077:0;cd .a
+: 1441196092:0;cd .
+: 1441196101:0;cd .aptitude
+: 1441196105:0;l
+: 1441196116:0;vi config
+: 1441196131:0;vi cache
+: 1441196186:0;cd
+: 1441196191:0;du --max-depth=1 -x | sort -n
+: 1441196225:0;apt-get autoclean
+: 1441196233:0;apt-get clean
+: 1441196293:0;aptitude remove $(deborphan --nice-mode --guess-all)
+: 1441196300:0;l
+: 1441196307:0;ss -ln
+: 1441196322:0;npg ss-server
+: 1441196345:0;npg ss-local
+: 1441196391:0;l
+: 1441196401:0;shutdown -r now
+: 1441196477:0;ll
+: 1441196489:0;npg ss-server
+: 1441196496:0;npg ss-local
+: 1441196504:0;fcdla
+: 1441196535:0;fcdgs
+: 1441196580:0;cd /usr/lib/firewalld/services
+: 1441196582:0;l
+: 1441196620:0;vi proxy-dhcp.xml
+: 1441196651:0;apt-get install proxy-dhcp
+: 1441196665:0;apt-get install proxydhcp
+: 1441196678:0;apt-get install dhcpproxy
+: 1441196921:0;cd /var/cache
+: 1441196922:0;l
+: 1441196931:0;cd debconf
+: 1441196932:0;l
+: 1441196945:0;vi templates.dat
+: 1441196963:0;cd ..
+: 1441196966:0;cd
+: 1441196969:0;cd 
+: 1441196973:0;cd /
+: 1441196980:0;cd /etc
+: 1441196981:0;l
+: 1441196989:0;vi fonts/fonts.conf
+: 1441197093:0;cd
+: 1441197128:0;ls /usr/share/consolefonts
+: 1441197294:0;apt-get install console-setup console-terminus
+: 1441197330:0;# dpkg-reconfigure console-setup 
+: 1441197347:0;dpkg-reconfigure console-setup 
+: 1441197454:0;vi /etc/console-tools/config 
+: 1441197517:0;cd /etc
+: 1441197523:0;cd console-tools
+: 1441197534:0;mkdir console-tools
+: 1441197542:0;vi /etc/console-tools/config 
+: 1441197553:0;cd
+: 1441197563:0;service console-setup start
+: 1441197570:0;service console-setup status
+: 1441197590:0;service console-setup restart
+: 1441197592:0;l
+: 1441197606:0;service console-setup status
+: 1441197634:0;vi /etc/console-tools/config 
+: 1441197650:0;service console-setup restart
+: 1441197654:0;service console-setup status
+: 1441197663:0;l
+: 1441197667:0;service console-setup status
+: 1441197686:0;cd /etc/init.d
+: 1441197687:0;l
+: 1441197701:0;vi console-setup
+: 1441197812:0;ss -ln
+: 1441197821:0;netstat -anp
+: 1441197868:0;ce
+: 1441197874:0;cd
+: 1441197883:0;service console-setup reload
+: 1441197885:0;l
+: 1441197888:0;ll
+: 1441197904:0;ls
+: 1441197907:0;la
+: 1441197910:0;l
+: 1441197917:0;locale -a
+: 1441197930:0;cd /etc
+: 1441197954:0;vi locale.gen
+: 1441198779:0;ls
+: 1441198781:0;l
+: 1441198783:0;ll
+: 1441198805:0;cd .oh-my-zsh
+: 1441198806:0;l
+: 1441198818:0;cd tools
+: 1441198819:0;l
+: 1441198853:0;chmod +x upgrade.sh
+: 1441198854:0;l
+: 1441198860:0;./upgrade.sh
+: 1441198889:0;git add --all .
+: 1441198911:0;git commit -m "mytheme"
+: 1441198928:0;./upgrade.sh
+: 1441198957:0;cd ..
+: 1441198959:0;ll
+: 1441198966:0;cd templates
+: 1441198967:0;l
+: 1441198973:0;cd ..
+: 1441198975:0;ll
+: 1441198980:0;cd plugins
+: 1441198981:0;l
+: 1441199024:0;cd
+: 1441199030:0;vi .zshrc
+: 1441199559:0;ll
+: 1441199579:0;git clone https://github.com/powerline/powerline.git .powerline
+: 1441199586:0;cd .powerline
+: 1441199587:0;l
+: 1441199607:0;python setup.py
+: 1441199643:0;./setup.py
+: 1441199647:0;cd
+: 1441199662:0;chmod -R +x .powerline
+: 1441199668:0;cd .powerline
+: 1441199670:0;l
+: 1441199676:0;./setup.py
+: 1441199701:0;setup.py cmd --help
+: 1441199714:0;./setup.py cmd --help
+: 1441199727:0;./setup.py --help
+: 1441199779:0;./setup.py build
+: 1441199791:0;./setup.py install
+: 1441199865:0;cd
+: 1441199892:0;powerline-daemon
+: 1441199910:0;powerline -h
+: 1441199919:0;powerline-daemon -h
+: 1441199942:0;ss -ln
+: 1441199989:0;npg powerline
+: 1441199997:0;npg python
+: 1441200000:0;l
+: 1441200014:0;cd .oh-my-zsh
+: 1441200015:0;l
+: 1441200020:0;cd themes
+: 1441200021:0;l
+: 1441200043:0;locate powerline
+: 1441200046:0;cd
+: 1441200057:0;locate powerline*
+: 1441200067:0;locate powerline
+: 1441200069:0;l
+: 1441200101:0;cd /usr/lib/python2.7
+: 1441200103:0;l
+: 1441200143:0;cd dist-packages
+: 1441200145:0;l
+: 1441200170:0;cd ..
+: 1441200185:0;l
+: 1441200191:0;ls site*
+: 1441200196:0;cd ..
+: 1441200198:0;l
+: 1441200213:0;cd python2.6
+: 1441200214:0;l
+: 1441200218:0;cd dist-packages
+: 1441200219:0;l
+: 1441200228:0;cd
+: 1441200260:0;cd .powerline
+: 1441200261:0;l
+: 1441200269:0;vi README.rst
+: 1441200286:0;cd tests
+: 1441200288:0;l
+: 1441200300:0;vi test.sh
+: 1441200313:0;./test.sh
+: 1441200354:0;cd
+: 1441200493:0;cd ..
+: 1441200494:0;l
+: 1441200496:0;cd 
+: 1441200510:0;cd .powerline
+: 1441200512:0;l
+: 1441200529:0;vi .local.vimrc
+: 1441200559:0;cd powerline
+: 1441200562:0;l
+: 1441200601:0;cd ..
+: 1441200603:0;l
+: 1441200662:0;cd 
+: 1441200677:0;apt-get install python-pip
+: 1441200700:0;pip install powerline-status
+: 1441200723:0;pip upgrade powerline-status
+: 1441200741:0;pip --upgrade powerline-status
+: 1441200765:0;pip install --upgrade powerline-status
+: 1441200771:0;l
+: 1441200785:0;powerline-status -h
+: 1441200837:0;powerline-lint -h
+: 1441200905:0;cd /scripts
+: 1441200956:0;pip install setuptools
+: 1441200973:0;pip install --upgrade setuptools
+: 1441201000:0;pip install --user powerline-status
+: 1441201015:0;pip install --upgrade --user powerline-status
+: 1441201059:0;powerline-status
+: 1441201071:0;powerline-status -h
+: 1441201124:0;wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+: 1441201127:0;wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+: 1441201143:0;mv PowerlineSymbols.otf ~/.fonts/
+: 1441201173:0;mkdir .fonts
+: 1441201180:0;mv PowerlineSymbols.otf ~/.fonts/
+: 1441201193:0;fc-cache -vf ~/.fonts/
+: 1441201217:0;mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+: 1441201226:0;mkdir .config
+: 1441201246:0;mkdir .config/fontconfig
+: 1441201256:0;mkdir .config/fontconfig/conf.d
+: 1441201262:0;mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+: 1441201289:0;mv 'SomeFont for Powerline.otf' ~/.fonts/
+: 1441201346:0;xset q
+: 1441201354:0;pt-
+: 1441201360:0;apt
+: 1441201377:0;apt-get install xset
+: 1441201412:0;apt-get install x11-xserver-utils
+: 1441201426:0;xset -h
+: 1441201436:0;xset q
+: 1441201502:0;cd /usr/local/lib/python2.7
+: 1441201503:0;l
+: 1441201507:0;cd site-packages
+: 1441201508:0;l
+: 1441201511:0;cd ..
+: 1441201515:0;cd dist-packages
+: 1441201517:0;l
+: 1441201524:0;cd powerline
+: 1441201525:0;l
+: 1441201553:0;cd config_files
+: 1441201555:0;l
+: 1441201563:0;cd colorschemes
+: 1441201564:0;l
+: 1441201571:0;cd ..
+: 1441201572:0;l
+: 1441201578:0;cd ..
+: 1441201579:0;ll
+: 1441201594:0;cd commands
+: 1441201596:0;l
+: 1441201609:0;cd
+: 1441201621:0;powerline-daemon -h
+: 1441201643:0;powerline-daemon --foreground
+: 1441201667:0;l
+: 1441201670:0;ll
+: 1441201677:0;who
+: 1441201685:0;date
+: 1441201769:0;powerline-daemon -
+: 1441201783:0;powerline-config
+: 1441201793:0;powerline-config -h
+: 1441201836:0;powerline-lint -h
+: 1441201886:0;npg powerline-daemon
+: 1441201918:0;npg python
+: 1441201985:0;netstat -anp
+: 1441202050:0;vi .zsh_history
+: 1441202124:0;dpkg -l |grep "^rc"|awk '{print $2}' |xargs aptitude -y purge
+: 1441202152:0;pip uninstall powerline-status
+: 1441202178:0;dpkg -l |grep "^rc"|awk '{print $2}' |xargs aptitude -y purge
+: 1441202190:0;pip -h
+: 1441202214:0;apt-get autoremove
+: 1441202223:0;apt-get autoclean
+: 1441202231:0;apt-get clean
+: 1441202237:0;cd
+: 1441202240:0;l
+: 1441202260:0;rm -rf .fonts
+: 1441202276:0;rm -rf .powerline
+: 1441202292:0;rm -rf .config
+: 1441202296:0;l
+: 1441202316:0;dpkg -l |grep "^rc"|awk '{print $2}' |xargs aptitude -y purge
+: 1441202394:0;vi .zshrc
+: 1441202409:0;shutdown -r now
+: 1441202675:0;ll
+: 1441209895:0;apt-get install logtamper
+: 1441209976:0;ls -l /var/run/utmp
+: 1441210041:0;ls -l /var/run/utmp /var/log/wtmp; w
+: 1441210262:0;wtmpclean
+: 1441210297:0;locate wtmpclean 
+: 1441210314:0;apt-get install wtmpclean
+: 1441210332:0;cd /sbin
+: 1441210335:0;ll
+: 1441210357:0;cd
+: 1441210360:0;cd src
+: 1441210511:0;./wtmpclean -p root gateway
+: 1441210541:0;locate wtmp
+: 1441210611:0;wtmp
+: 1441210635:0;clean -h
+: 1441211058:0;cd .source
+: 1441211060:0;l
+: 1441211075:0;tar -xvzf logtamper-v1.0.tgz
+: 1441211077:0;l
+: 1441211083:0;cd logtamper
+: 1441211085:0;l
+: 1441211107:0;vi README
+: 1441211152:0;cd sec
+: 1441211157:0;cd src
+: 1441211158:0;l
+: 1441211180:0;cd ..
+: 1441211182:0;l
+: 1441211197:0;vi install-sh
+: 1441211235:0;./install-sh
+: 1441211259:0;./config && make
+: 1441211280:0;./configure && make
+: 1441211342:0;make install
+: 1441211351:0;ll
+: 1441211357:0;cd src
+: 1441211359:0;l
+: 1441211380:0;cd ..
+: 1441211381:0;l
+: 1441211399:0;cd src
+: 1441211401:0;l
+: 1441211417:0;./wtmpclean -h
+: 1441211460:0;ls -l /var/run/utmp /var/log/wtmp; w
+: 1441211494:0;./wtmpclean -p root gateway
+: 1441211532:0;ls -l /var/run/utmp /var/log/wtmp; w
+: 1441211603:0;./wtmpclean
+: 1441211838:0;ln .source/logtamper/src/wtmpclean /usr/local/bin/wtmpclean
+: 1441211877:0;l
+: 1441211907:0;ln -s .source/logtamper/src/wtmpclean /usr/local/bin/wtmpclean
+: 1441211929:0;rm /usr/local/bin/wtmpclean
+: 1441211936:0;ln -s .source/logtamper/src/wtmpclean /usr/local/bin/wtmpclean
+: 1441211939:0;l
+: 1441211942:0;ll
+: 1441211953:0;wtmpclean
+: 1441212004:0;wtmpclean -m root localdomain tty1 2008:1:1:1:1:1
+: 1441212190:0;#! /bin/bash
+: 1441212190:0;wtmpclean -m root localdomain tty1 2008:1:1:1:1:1
+: 1441212190:0;clear all
+: 1441212309:0;vi .wtmpclean.sh
+: 1441212346:0;chmod +x .wtmpclean.sh
+: 1441212361:0;./.wtmpclean.sh
+: 1441212413:0;./.wtmpclean.sh &
+: 1441212425:0;clc
+: 1441212441:0;clear
+: 1441212483:0;vi .wtmpclean.sh
+: 1441212642:0;./.wtmpclean.sh
+: 1441212648:0;l
+: 1441212650:0;ll
+: 1441212653:0;l
+: 1441212695:0;vi .wtmpclean.sh
+: 1441212737:0;vi /etc/rc.local
+: 1441212770:0;reboot
+: 1441212856:0;vi /etc/rc.local
+: 1441212912:0;cd /etc/sah
+: 1441212920:0;cd /etc/ssh
+: 1441212922:0;l
+: 1441212928:0;vi sshd_config
+: 1441213012:0;print -h
+: 1441213020:0;print --help
+: 1441213026:0;cd
+: 1441213030:0;print
+: 1441213038:0;print -h
+: 1441213043:0;man print
+: 1441213079:0;printlastlog
+: 1441213086:0;print lastlog
+: 1441213093:0;print 
+: 1441213121:0;print /var/log/lastlog
+: 1441213133:0;print "/var/log/lastlog"
+: 1441213151:0;print ls /var/log/lastlog
+: 1441213167:0;print "ls /var/log/lastlog"
+: 1441213189:0;print "$ls /var/log/lastlog"
+: 1441213231:0;print /var/log/wtmpclean.log
+: 1441213240:0;print cat /var/log/wtmpclean.log
+: 1441213259:0;print "$cat /var/log/wtmpclean.log"
+: 1441213279:0;man Print
+: 1441213415:0;print --action="ls -l"
+: 1441213440:0;print --action=<ls -l>
+: 1441213461:0;print --action=<vi>
+: 1441213652:0;wtmpclean
+: 1441213675:0;./wtmpclean
+: 1441213694:0;wtmpclean
+: 1441213707:0;cd /var/log
+: 1441213708:0;l
+: 1441213721:0;vi lastlog
+: 1441213732:0;vi wtmp
+: 1441213760:0;vi wtmpclean.log
+: 1441213789:0;vi user.log
+: 1441213875:0;./wtmpclean -p -f /var/log/wtmp.1 root 127.0.0.1
+: 1441213891:0;wtmpclean -p -f /var/log/wtmp.1 root 127.0.0.1
+: 1441213942:0;vi wtmp.1
+: 1441213951:0;l
+: 1441213958:0;wtmpclean -p -f /var/log/wtmp.1 root 127.0.0.1
+: 1441213978:0;vi wtmp.1
+: 1441214362:0;vi /etc/ssh/sshd_config
+: 1441214468:0;cd /var/log
+: 1441214469:0;l
+: 1441214476:0;vi lastlog
+: 1441214494:0;vi wtmp.1
+: 1441214518:0;vi syslog
+: 1441214548:0;l
+: 1441214562:0;cd 
+: 1441214568:0;cd .source/logtamper
+: 1441214569:0;l
+: 1441214584:0;vi config.guess
+: 1441214630:0;vi insTALL
+: 1441214640:0;vi install-sh
+: 1441214662:0;cd src
+: 1441214663:0;l
+: 1441214673:0;cd missing
+: 1441214674:0;l
+: 1441214681:0;cd ..
+: 1441214689:0;l
+: 1441214707:0;vi depcomp
+: 1441214734:0;cd src
+: 1441214744:0;./wtmpclean
+: 1441214786:0;./wtmpclean -p root gateway
+: 1441214817:0;vi /var/log/wtmp
+: 1441214863:0;j log
+: 1441214873:0;cd /var/log
+: 1441214878:0;printwtmp
+: 1441214885:0;print wtmp
+: 1441214893:0;print $wtmp
+: 1441214909:0;print --action=wtmp
+: 1441214954:0;wtmpckean -l
+: 1441214964:0;wtmpclean -l
+: 1441214996:0;wtmpclean -l root
+: 1441215038:0;wtmpclean root 127.0.0.1
+: 1441215052:0;vi wtmp
+: 1441215118:0;wtmpclean -m root localdomain tty1 2008:1:1:1:1:1
+: 1441215237:0;vi .zshrc
+: 1441215285:0;source .wtmpclean.sh
+: 1441215302:0;l
+: 1441215306:0;ll
+: 1441215327:0;vi .wtmpclean.sh
+: 1441215378:0;source .wtmpclean.sh
+: 1441215392:0;ss -ln
+: 1441215440:0;source .wtmpclean.sh &
+: 1441215453:0;nohup source .wtmpclean.sh & 
+: 1441215486:0;source .wtmpclean.sh 2>1 & 
+: 1441215509:0;source .wtmpclean.sh 2 > 1& 
+: 1441215524:0;source .wtmpclean.sh 2 > 1& &
+: 1441215547:0;source .wtmpclean.sh 2 > 1 &&
+: 1441215553:0;source .wtmpclean.sh 2 > 1 & &
+: 1441215557:0;source .wtmpclean.sh 2 > 1 & 
+: 1441215592:0;vi .zshrc
+: 1441215626:0;source .zshrc
+: 1441215661:0;vi .zshrc
+: 1441215700:0;source .zshrc
+: 1441215716:0;ll
+: 1441215731:0;rm 1
+: 1441215738:0;rm nohup.out
+: 1441215743:0;ll
+: 1441215780:0;vi .wtmpclean.sh
+: 1441215807:0;source .zshrc
+: 1441215835:0;vi .wtmpclean.sh
+: 1441215867:0;source .zshrc
+: 1441215871:0;vi .wtmpclean.sh
+: 1441215900:0;source .zshrc
+: 1441215929:0;./.wtmpclean.sh
+: 1441215950:0;l
+: 1441215963:0;vi .zshrc
+: 1441216035:0;source .zshrc
+: 1441216096:0;vi /etc/rc.local
+: 1441216136:0;vi /etc/ssh/sshd_config
+: 1441216170:0;service sshd restart
+: 1441216227:0;lastlog
+: 1441216308:0;./.wtmpclean.sh
+: 1441216331:0;vi .zshrc
+: 1441216383:0;source ./.wtmpclean.sh
+: 1441216390:0;./.wtmpclean.sh
+: 1441216430:0;exit0
+: 1441216465:0;vi .wtmpclean.sh
+: 1441216589:0;./.wtmpclean.sh
+: 1441216684:0;ll
+: 1441216705:0;l
+: 1441216708:0;cd
+: 1441216744:0;l
+: 1441216753:0;ll
+: 1441216782:0;dpkg -l |grep "^rc"|awk '{print $2}' |xargs aptitude -y purge
+: 1441216787:0;ll
+: 1441216797:0;npg ss-local
+: 1441222526:0;ll
+: 1441222537:0;ls
+: 1441222681:0;ll
+: 1441222720:0;ls
+: 1441222723:0;la
+: 1441223116:0;vi /etc/ssh/sshd_config
+: 1441223163:0;service sshd restart
+: 1441223279:0;vi /etc/ssh/sshd_config
+: 1441223310:0;service sshd restart
+: 1441236748:0;git clone https://github.com/librehat/shadowsocks-qt5.git
+: 1441236752:0;l
+: 1441236753:0;ll
+: 1441236757:0;cd shadowsocks-qt5
+: 1441236758:0;ll
+: 1441236767:0;cd src
+: 1441236768:0;l
+: 1441236773:0;cd ..
+: 1441236775:0;ll
+: 1441236783:0;cd debian
+: 1441236784:0;l
+: 1441236796:0;cd rules
+: 1441236804:0;cd source
+: 1441236805:0;l
+: 1441236808:0;vi format
+: 1441236814:0;cd ..
+: 1441236827:0;cd src
+: 1441236828:0;l
+: 1441236848:0;cd ..
+: 1441236853:0;vi README.md
+: 1441236951:0;l
+: 1441236952:0;la
+: 1441236965:0;vi .qmake.conf
+: 1441237052:0;cd d
+: 1441237053:0;cd
+: 1441237068:0;apt-get install qtbase5
+: 1441237082:0;apt-get install qtbase
+: 1441237094:0;apt-get install qt5
+: 1441237098:0;apt-get install qt
+: 1441237131:0;apt-get install qt5-dev
+: 1441237136:0;apt-get install qt-dev
+: 1441237200:0;dnf copr enable librehat/shadowsocks
+: 1441237207:0;apt-get install dnf
+: 1441237281:0;apt-get install qt5-qmake qtbase5-dev libqrencode-dev libqtshadowsocks-dev libappindicator-dev libzbar-dev libbotan1.10-dev
+: 1441237305:0;apt-get install ss-qt5
+: 1441237393:0;apt-get install shadowsocks-qt5
+: 1441237410:0;pip install shadowsocks-qt5
+: 1441237457:0;apt-get update
+: 1441237469:0;apt-get upgrade
+: 1441237528:0;apt-get install qt5-make
+: 1441237543:0;apt-get install qt
+: 1441237566:0;ll
+: 1441237571:0;cd shadowsocks-qt5
+: 1441237572:0;l
+: 1441237589:0;apt-get install qmake
+: 1441237611:0;apt-get install qtbase5
+: 1441237929:0;add-apt-repository ppa:hzwhuang/ss-qt5
+: 1441237991:0;apt-get install qt5-qmake
+: 1441238018:0;apt-get install qtbase5-dev libqrencode-dev
+: 1441238070:0;apt-get install libqtshadowsocks-dev 
+: 1441238092:0;apt-get install libappindicator-dev libzbar-dev libbotan1.10-dev
+: 1441238169:0;apt-get install libqtshadowsocks-dev
+: 1441238176:0;apt-get install libqtshadowsock
+: 1441238187:0;apt-get install libqt-dev
+: 1441238211:0;apt-get install libqt5shadowsocks-dev
+: 1441238219:0;apt-get install libqt5-dev
+: 1441238259:0;cd shadowsocks-qt5
+: 1441238264:0;dpkg-buildpackage -uc -us -b
+: 1441238377:0;cd
+: 1441238416:0;cd /etc/apt-get
+: 1441238422:0;cd /etc/apt
+: 1441238424:0;l
+: 1441238432:0;vi sources.list
+: 1441238452:0;vi sourccd apt.conf.d
+: 1441238473:0;cd apt.conf.d
+: 1441238474:0;l
+: 1441238482:0;cd ..
+: 1441238486:0;l
+: 1441238490:0;cd sources.list.d
+: 1441238492:0;l
+: 1441238500:0;cd ..
+: 1441238504:0;cd preferences.d
+: 1441238505:0;l
+: 1441238508:0;cd ..
+: 1441238515:0;cd trusted.gpg.d
+: 1441238516:0;l
+: 1441238533:0;cd ..
+: 1441238539:0;vi listchanges.conf
+: 1441238567:0;cd ..
+: 1441238568:0;l
+: 1441238777:0;apt-get install libQtShadowsocks
+: 1441238801:0;apt-get install libappindicator
+: 1441238869:0;apt-get install botan
+: 1441238888:0;apt-get install python-setuptools
+: 1441238896:0;apt-get install python-dev
+: 1441238949:0;apt-get install libQtShadowsocks
+: 1441238958:0;apt-get install libQt5
+: 1441238962:0;apt-get install libQt
+: 1441238967:0;apt-get install libQt-dev
+: 1441238979:0;apt-get install libQt5-dev
+: 1441239098:0;apt-get install qt5-qmake qtbase5-dev libbotan1.10-dev
+: 1441239138:0;cd
+: 1441239153:0;git clone https://github.com/librehat/libQtShadowsocks.git
+: 1441239159:0;cd libQtShadowsocks
+: 1441239196:0;dpkg-buildpackage -uc -us -b
+: 1441239301:0;l
+: 1441239307:0;cd
+: 1441239308:0;l
+: 1441239310:0;ll
+: 1441239325:0;dpkg -i
+: 1441239361:0;dpkg -i install libqtshadowsocks
+: 1441239416:0;cd libQtShadowsocks
+: 1441239419:0;l
+: 1441239425:0;cd ..
+: 1441239438:0;dpkg -i install libqtshadowsocks-dev_1.6.1-1_amd64.deb
+: 1441239474:0;dpkg -i install libqtshadowsocks-dev
+: 1441239477:0;ll
+: 1441239497:0;dpkg -i install libqtshadowsocks_1.6.1-1_amd64.deb
+: 1441239518:0;dpkg -i install libqtshadowsocks_1.6.1-1_amd64.deb libqtshadowsocks-dev_1.6.1-1_amd64.deb
+: 1441239544:0;dpkg -i install libqtshadowsocks_1.6.1-1_amd64.deb libqtshadowsocks-dev_1.6.1-1_amd64.deb shadowsocks-libqtshadowsocks_1.6.1-1_amd64.deb
+: 1441239568:0;dpkg -i install shadowsocks-libqtshadowsocks_1.6.1-1_amd64.deb
+: 1441239599:0;dpkg -i libqtshadowsocks_1.6.1-1_amd64.deb libqtshadowsocks-dev_1.6.1-1_amd64.deb
+: 1441239668:0;cd shadowsocks-qt5
+: 1441239672:0;dpkg-buildpackage -uc -us -b
+: 1441239846:0;cd
+: 1441239867:0;dpkg -i shadowsocks-qt5_2.4.2-1_amd64.deb
+: 1441239883:0;ll
+: 1441239912:0;ss-qt5 -h
+: 1441239933:0;npg ss-qt5
+: 1441239938:0;ss -ln
+: 1441239967:0;netstat -anp
+: 1441240025:0;locate shadowsocks-qt5
+: 1441240033:0;cd /usr/bin
+: 1441240034:0;l
+: 1441240065:0;ss-qt5 --help
+: 1441240082:0;cd ..
+: 1441240084:0;cd lib
+: 1441240085:0;l
+: 1441240137:0;cd ahacd
+: 1441240138:0;cd
+: 1441240146:0;cd shadowsocks-qt5
+: 1441240147:0;l
+: 1441240157:0;cd src
+: 1441240158:0;l
+: 1441240178:0;cd ..
+: 1441240179:0;l
+: 1441240191:0;vi README.md
+: 1441240266:0;ss-qt5
+: 1441240357:0;cd
+: 1441240368:0;apt-get install vnc-server
+: 1441240382:0;apt-get install vnc4server
+: 1441240420:0;vnc 
+: 1441240426:0;vnc4server
+: 1441240457:0;vnc4server stop
+: 1441240487:0;vnc4server -h
+: 1441240523:0;vnc4server -kill :1
+: 1441240537:0;vnc4server
+: 1441240552:0;npg vnc4server
+: 1441240582:0;ss -ln
+: 1441268587:0;cd /usr/local/lib/python2.7/dist-packages/gfwlist2pac
+: 1441268590:0;cd resources
+: 1441268591:0;l
+: 1441268596:0;vi abp.js
+: 1441268709:0;vi proxy.pac
+: 1441268737:0;vi abp.js
+: 1441268794:0;cd
+: 1441269076:0;git clone https://github.com/cuber/gfwlist2pac-shell.git
+: 1441269080:0;l
+: 1441269081:0;ll
+: 1441269092:0;mkdir after_make
+: 1441269106:0;mv lib* after_make
+: 1441269108:0;ll
+: 1441269122:0;mv shadowsocks-libqtshadowsocks_1.6.1-1_amd64.deb after_make
+: 1441269125:0;ll
+: 1441269149:0;mv shadowsocks-qt5_2.4.2-1_amd64* after_make
+: 1441269151:0;ll
+: 1441269161:0;cd gfwlist2pac-shell
+: 1441269163:0;ll
+: 1441269168:0;vo gfw.sh
+: 1441269173:0;vi gfw.sh
+: 1441269319:0;ll
+: 1441269325:0;vi util.sh
+: 1441269358:0;vi README.md
+: 1441269400:0;vi gfw.sh
+: 1441269433:0;ll
+: 1441269439:0;./gfw.sh
+: 1441269445:0;ll
+: 1441269467:0;./gfw.sh test.pac
+: 1441269469:0;l
+: 1441269477:0;vi test.pac
+: 1441269503:0;ll
+: 1441269511:0;vi gfw.sh
+: 1441269615:0;which openssl
+: 1441269624:0;which curl
+: 1441269630:0;l
+: 1441269641:0;vi test.pac
+: 1441269659:0;vi README.md
+: 1441269772:0;cd
+: 1441269787:0;j /usr/local/lib/python2.7/dist-packages/gfwlist2pac/resources
+: 1441269789:0;l
+: 1441269792:0;vi builtin.txt
+: 1441269810:0;cd
+: 1441269821:0;cd github/blxu/ios.pac
+: 1441269822:0;l
+: 1441269829:0;vi test.sh
+: 1441269839:0;./test.sh
+: 1441269995:0;vi myrule.txt
+: 1441270026:0;./test.sh
+: 1441270283:0;cd gfwlist2pac-shell
+: 1441270284:0;l
+: 1441270292:0;vi gfw.sh
+: 1441270348:0;ll
+: 1441270359:0;chmod +x util.sh
+: 1441270361:0;l
+: 1441270377:0;vi .gitignore
+: 1441270394:0;rm -rf .g*
+: 1441270396:0;l
+: 1441270416:0;./gfw.sh test.pac
+: 1441270417:0;l
+: 1441270424:0;vi test.pac
+: 1441270438:0;j /usr/local/lib/python2.7/dist-packages/gfwlist2pac/resources
+: 1441270440:0;l
+: 1441270443:0;vi proxy.pac
+: 1441270467:0;vi tld.txt
+: 1441270477:0;vi __init__.py
+: 1441270487:0;vi proxy.pac
+: 1441270499:0;cd ..
+: 1441270500:0;l
+: 1441270508:0;cd resources
+: 1441270510:0;l
+: 1441270519:0;vi abp.js
+: 1441270533:0;vi tld.txt
+: 1441270548:0;cd ..
+: 1441270560:0;cd gfwlist2pac-1.1.3.egg-info
+: 1441270561:0;l
+: 1441270572:0;vi SOURCES.txt
+: 1441270597:0;vi dependency_links.txt
+: 1441270606:0;l
+: 1441270613:0;vi entry_points.txt
+: 1441270625:0;vi top_level.txt
+: 1441270636:0;vi PKG-INFO
+: 1441270669:0;cd
+: 1441270672:0;cd gfwlist2pac-shell
+: 1441270674:0;l
+: 1441270679:0;vi test.pac
+: 1441270717:0;j ios
+: 1441270744:0;cat /root/gfwlist2pac-shell/test.pac > index.html
+: 1441270745:0;l
+: 1441270755:0;git add --all .
+: 1441270767:0;git commit -a -m "page"
+: 1441270776:0;git push origin gh-pages
+: 1441270885:0;cd
+: 1441270890:0;cd gfwlist2pac-shell
+: 1441270892:0;l
+: 1441270898:0;vi gfw.sh
+: 1441271058:0;./gfw.sh test.pac
+: 1441271061:0;l
+: 1441271067:0;vi test.pac
+: 1441271111:0;cat /root/gfwlist2pac-shell/test.pac > index.html
+: 1441271118:0;git add --all .
+: 1441271125:0;git commit -a -m "page"
+: 1441271130:0;git push origin gh-pages
+: 1441271965:0;cd gfwlist2pac-shell
+: 1441271967:0;l
+: 1441271972:0;vi gfw.sh
+: 1441272073:0;vi custom.txt
+: 1441272273:0;./gfw.sh test.pac
+: 1441272274:0;l
+: 1441272280:0;vi test.pac
+: 1441272341:0;./gfw.sh test.pac
+: 1441272343:0;l
+: 1441272353:0;vi custom.txt
+: 1441272451:0;./gfw.sh test.pac
+: 1441272452:0;l
+: 1441272458:0;vi test.pac
+: 1441272523:0;l
+: 1441272564:0;cp ../github/alextsui0510/ios.pac/index.html proxy.pac
+: 1441272566:0;l
+: 1441272571:0;vi proxy.pac
+: 1441272722:0;cd
+: 1441272727:0;j resou
+: 1441272729:0;l
+: 1441272734:0;vi proxy.pac
+: 1441272752:0;cp proxy.pac proxy.pac.bak
+: 1441272756:0;vi proxy.pac
+: 1441272820:0;j ios
+: 1441272822:0;l
+: 1441272827:0;vi test.sh
+: 1441272834:0;./test.sh
+: 1441272843:0;vi index.html
+: 1441273632:0;ll
+: 1441273648:0;vnc4server -h
+: 1441273683:0;vnc4server -l
+: 1441273730:0;vnc4server -kill :1
+: 1441273734:0;ll
+: 1441273738:0;l
+: 1441273745:0;cd .vnc
+: 1441273746:0;l
+: 1441273756:0;vi ALEX:1.log
+: 1441273771:0;vi xstartup
+: 1441273786:0;cd
+: 1441273793:0;vnc4server
+: 1441273817:0;ss -ln
+: 1441273832:0;npg vnc4server
+: 1441273838:0;npg vnc
+: 1441273860:0;fcdgs
+: 1441273893:0;vi /usr/lib/firewalld/services/vnc-server.xml
+: 1441273934:0;fcdmp --add-service=vnc-server
+: 1441273937:0;fcdrd
+: 1441274163:0;ls
+: 1441274175:0;ll
+: 1441274326:0;cd .vnc
+: 1441274337:0;cp xstartup xstartup.bak
+: 1441274352:0;vi xstartup
+: 1441274444:0;vnc4server -kill :1
+: 1441274460:0;vnc4server
+: 1441274546:0;apt-get install x-window-system-core
+: 1441274583:0;apt-get install gdm
+: 1441274595:0;apt-get install gdm3
+: 1441275043:0;apt-get install debian-desktop
+: 1441275064:0;vnc4server -kill :1
+: 1441275073:0;vnc4server
+: 1441275124:0;apt-get install ubuntu-desktop
+: 1441275166:0;apt-get install Xubuntu-desktop
+: 1441275190:0;apt-get install Kubuntu-desktop
+: 1441275209:0;apt-get install *-desktop
+: 1441275225:0;d
+: 1441275226:0;cd
+: 1441275240:0;which gnome
+: 1441275246:0;which gnome-core
+: 1441275271:0;gnome
+: 1441275348:0;apt-get install gnome-core
+: 1441275500:0;vnc4server -kill :1
+: 1441275511:0;vnc4server 
+: 1441275539:0;apt-get install ubuntu-desktop
+: 1441275546:0;apt-get install Kubuntu-desktop
+: 1441275556:0;apt-get install gnome-desktop
+: 1441275569:0;apt-get install Xubuntu-desktop
+: 1441275602:0;reboot
+: 1441275657:0;vnc4server 
+: 1441275679:0;gnome
+: 1441275685:0;cd /usr/
+: 1441275687:0;l
+: 1441275693:0;cd share
+: 1441275694:0;l
+: 1441275725:0;cd gnome
+: 1441275726:0;l
+: 1441275736:0;vi autostart
+: 1441275757:0;cd autostart
+: 1441275758:0;l
+: 1441275769:0;cd ..
+: 1441275785:0;apt-get install gnome-desktop
+: 1441275794:0;apt-get install gnome-daemon
+: 1441275803:0;cd ..
+: 1441275805:0;l
+: 1441275811:0;ce gnome
+: 1441275815:0;cd gnome
+: 1441275816:0;l
+: 1441275822:0;cd applications
+: 1441275824:0;l
+: 1441275838:0;cd
+: 1441275851:0;apt-get install debian-desktop
+: 1441275857:0;apt-get install debian
+: 1441275864:0;apt-get install desktop
+: 1441275879:0;apt-get install -h
+: 1441275947:0;vi /etc/apt/sources.list
+: 1441275958:0;vi /etc/apt/sources.list(5)
+: 1441275994:0;apt-get install -l
+: 1441275999:0;apt-get install --list
+: 1441276075:0;cd /usr/bin
+: 1441276076:0;l
+: 1441276090:0;ls gnome*
+: 1441276107:0;cd
+: 1441276112:0;gnome-open
+: 1441276136:0;gnome-help
+: 1441276161:0;cd
+: 1441276168:0;cd /usr/loxal
+: 1441276175:0;cd /usr/local
+: 1441276177:0;l
+: 1441276182:0;cd bin
+: 1441276183:0;l
+: 1441276202:0;cd
+: 1441276212:0;cd /usr/lib
+: 1441276213:0;l
+: 1441276236:0;ls gnome*
+: 1441276293:0;gnome-settings-daemon
+: 1441276431:0;apt-get install gdm-themes
+: 1441276441:0;apt-get install gdm3-themes
+: 1441276445:0;apt-get install gdm3
+: 1441276456:0;apt-get autoremove
+: 1441276471:0;apt-get install gnome
+: 1441276488:0;shutdown -r now
+: 1441276623:0;vnc4server 
+: 1441276755:0;cd .vnc
+: 1441276757:0;ll
+: 1441276763:0;vi xstartup
+: 1441276795:0;./xstartup
+: 1441276811:0;vi xstartup
+: 1441276897:0;cd /etc
+: 1441276898:0;l
+: 1441276904:0;cd vnc
+: 1441276907:0;cd 
+: 1441276910:0;cd .vnc
+: 1441276911:0;l
+: 1441276917:0;vi xstartup
+: 1441276981:0;xsetroot -h
+: 1441276994:0;vi xstartup
+: 1441277001:0;cd
+: 1441277002:0;l
+: 1441277016:0;cd .vnc
+: 1441277018:0;l
+: 1441277023:0;$home
+: 1441277032:0;vi xstartup
+: 1441277072:0;./xstartup
+: 1441277110:0;vnc4server -kill :1
+: 1441277118:0;vnc4server 
+: 1441277308:0;vnc4server -kill :1
+: 1441277314:0;vnc4server -l
+: 1441277323:0;vnc4server -kill :1
+: 1441277332:0;vnc4server --help
+: 1441277380:0;vnc4server --user=nobody
+: 1441277387:0;l
+: 1441277396:0;vi ALEX:1.log
+: 1441277429:0;l
+: 1441277435:0;vnc4server -kill :1
+: 1441277441:0;l
+: 1441277450:0;vi xstartup
+: 1441277481:0;cd /etc/X11
+: 1441277482:0;l
+: 1441277498:0;vi default-display-manager
+: 1441277528:0;vi Xreset
+: 1441277540:0;cd
+: 1441277544:0;cd .vnc
+: 1441277549:0;vi xstartup
+: 1441277589:0;xreset -h
+: 1441277597:0;Xreset -h
+: 1441277612:0;X -h
+: 1441277629:0;cd
+: 1441277633:0;cd .vnc
+: 1441277643:0;vi xstartup
+: 1441277675:0;vnc4server -kill :1
+: 1441277689:0;vnc4server
+: 1441277710:0;vnc4server -kill :1
+: 1441277717:0;vi xstartup
+: 1441277759:0;vnc4server
+: 1441277883:0;vnc4server -kill :1
+: 1441277892:0;vnc
+: 1441277896:0;vncserver
+: 1441277924:0;vnc4server -kill :1
+: 1441277933:0;vi xstartup
+: 1441277992:0;vncserver
+: 1441278018:0;reboot
+: 1441278121:0;vncserver
+: 1441278149:0;cd .vnc
+: 1441278161:0;mv xstartup.bak xstartup
+: 1441278170:0;vnc4server -kill :1
+: 1441278176:0;vncserver
+: 1441278203:0;cd
+: 1441278225:0;apt-get remove gnome-core
+: 1441278245:0;apt-get remove gdm3
+: 1441278262:0;apt-get autoremove
+: 1441278402:0;apt-get remove x-window-system-core
+: 1441278429:0;apt-get remove xorg
+: 1441278440:0;apt-get autoremove
+: 1441278515:0;dpkg -l |grep "^rc"|awk '{print $2}' |xargs aptitude -y purge
+: 1441278533:0;apt-get autoclean
+: 1441278542:0;apt-get clean
+: 1441278552:0;apt-get autoremove
+: 1441278587:0;shutdown -r now
+: 1441278621:0;l
+: 1441278625:0;ll
+: 1441278649:0;apt-get remove vnc4server
+: 1441278660:0;dpkg -l |grep "^rc"|awk '{print $2}' |xargs aptitude -y purge
+: 1441278671:0;apt-get autoremove
+: 1441278675:0;apt-get clean
+: 1441278682:0;apt-get autoclean
+: 1441278704:0;fcdmp --remove-service=vnc-server
+: 1441278707:0;fcdrd
+: 1441278714:0;fcdla
+: 1441278758:0;fcdmp --remove-forward-port=port=8388:proto=tcp:toport=21
+: 1441278774:0;fcdmp --add-forward-port=port=8388:proto=tcp:toport=21
+: 1441278783:0;fcdmp --add-forward-port=port=8388:proto=udp:toport=21
+: 1441278802:0;fcdmp --add-forward-port=port=1080:proto=udp:toport=23
+: 1441278806:0;fcdrd
+: 1441278810:0;fcdla
+: 1441278863:0;npg sshd
+: 1441278880:0;npg ss-server
+: 1441278929:0;npg ss-locak
+: 1441278932:0;npg ss-local
+: 1441278937:0;ag
+: 1441278944:0;vi .zshrc
+: 1441279090:0;source .zshrc
+: 1441279098:0;agar
+: 1441279105:0;ag -h
+: 1441279111:0;ag update
+: 1441279130:0;ag upgrade
+: 1441279148:0;gem
+: 1441279156:0;ruby
+: 1441279160:0;git
+: 1441279162:0;g
+: 1441279190:0;gmsg
+: 1441279201:0;which gmsg
+: 1441279213:0;which gc
+: 1441279223:0;which gcmsg
+: 1441279237:0;which gca
+: 1441279244:0;which gcamsg
+: 1441279264:0;which gpog
+: 1441279269:0;vi .zshrc
+: 1441279458:0;which gca
+: 1441279465:0;which gcm
+: 1441279483:0;which gcm1
+: 1441279498:0;which gcg
+: 1441279506:0;which gcogg
+: 1441279509:0;which gcog
+: 1441279518:0;vi .zshrc
+: 1441279692:0;source .zshrc
+: 1441279697:0;which gcm
+: 1441279703:0;which mygcm
+: 1441279709:0;which gcam
+: 1441279722:0;which gcom
+: 1441279730:0;which gcog
+: 1441279734:0;which gcg
+: 1441279743:0;which gpog
+: 1441279750:0;which gpom
+: 1441279766:0;shutdown -r now
+: 1441280288:0;j ios
+: 1441280289:0;l
+: 1441280295:0;./test.sh
+: 1441293463:0;ll
+: 1441293476:0;cd gfwlist2pac-shell
+: 1441293478:0;l
+: 1441293492:0;cd
+: 1441293512:0;mv gfwlist2pac-shell .source
+: 1441293528:0;mv shadowsocks-qt5 .source
+: 1441293530:0;ll
+: 1441293544:0;mv after_make .s
+: 1441293549:0;ou
+: 1441293552:0;ll
+: 1441293567:0;mv .s after_make
+: 1441293568:0;ll
+: 1441293589:0;mv after_make .source/shadowsocks-qt5
+: 1441293591:0;ll
+: 1441293599:0;cd github
+: 1441293601:0;ll
+: 1441293606:0;cd blxu
+: 1441293608:0;l
+: 1441293612:0;cd blxu.github.io
+: 1441293614:0;l
+: 1441293624:0;vi index.html
+: 1441293795:0;cd
+: 1441293798:0;git clone git://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme ~/.ohmyzsh-powerline
+: 1441293799:0;cd ~/.ohmyzsh-powerline
+: 1441293804:0;./install_in_omz.sh
+: 1441293864:0;ll
+: 1441293869:0;cd
+: 1441293871:0;l
+: 1441293874:0;ll
+: 1441293879:0;vi .zshrc
+: 1441293971:0;cd .ohmyzsh-powerline
+: 1441293972:0;l
+: 1441293978:0;cd 
+: 1441293987:0;cd .oh-my-zsh
+: 1441293991:0;l
+: 1441293994:0;cd themes
+: 1441293995:0;l
+: 1441294015:0;cd
+: 1441294024:0;cd .ohmyzsh-powerline
+: 1441294025:0;l
+: 1441294057:0;cd
+: 1441294076:0;cd .ohmyzsh-powerline
+: 1441294078:0;pwd
+: 1441294089:0;cd
+: 1441294094:0;vi .zshrc
+: 1441294222:0;mv .ohmyzsh-powerline .oh-my-zsh
+: 1441294228:0;cd .oh-my-zsh
+: 1441294229:0;ll
+: 1441294277:0;cp .ohmyzsh-powerline/powerline.zsh-theme themes/powerline.zsh-theme
+: 1441294292:0;cd themes
+: 1441294294:0;l
+: 1441294304:0;cd
+: 1441294310:0;source .zshrc
+: 1441294332:0;l
+: 1441294336:0;ls
+: 1441294342:0;l
+: 1441294347:0;ll
+: 1441294376:0;cd .oh-my-zsh/themes
+: 1441294378:0;l
+: 1441294403:0;cd
+: 1441294408:0;vi .zshrc
+: 1441294451:0;source .zshrc
+: 1441294453:0;l
+: 1441294456:0;clc
+: 1441294457:0;ll
+: 1441294473:0;l
+: 1441294480:0;ll
+: 1441294505:0;rm -rf .vnc
+: 1441294521:0;vi .Xauthority
+: 1441294550:0;rm .Xauthority
+: 1441294553:0;l
+: 1441294573:0;vi .cloud-locale-test.skip
+: 1441294582:0;l
+: 1441294586:0;ll
+: 1441294590:0;cd github
+: 1441294593:0;l
+: 1441294597:0;cd alextsui0510
+: 1441294598:0;l
+: 1441294602:0;cd alextsui0510.github.io
+: 1441294604:0;ll
+: 1441294611:0;vi test.sh
+: 1441294622:0;which vi
+: 1441294632:0;which vim
+: 1441294636:0;which gvim
+: 1441294645:0;gvim test.sh
+: 1441294675:0;display
+: 1441294681:0;x11
+: 1441294691:0;screen
+: 1441294702:0;apt-get install display
+: 1441294714:0;apt-get install screen
+: 1441294724:0;l
+: 1441294730:0;screen
+: 1441294756:0;screen test
+: 1441294759:0;l
+: 1441294961:0;ll
+: 1441294971:0;gvim .wtmpclean.sh
+: 1441294987:0;vim .wtmpclean.sh
+: 1441294998:0;vi -v
+: 1441295008:0;vim -v
+: 1441295022:0;cd /etc
+: 1441295038:0;vi locale.gen
+: 1441295080:0;locale-gen
+: 1441295085:0;l
+: 1441295087:0;ll
+: 1441295094:0;vim -v
+: 1441295127:0;agr gvim
+: 1441295181:0;agr gdk-vim
+: 1441295192:0;agr gnome-vim
+: 1441295200:0;gvim -v
+: 1441295210:0;l
+: 1441295223:0;agar
+: 1441295232:0;ag clean
+: 1441295238:0;ag autoclean
+: 1441295273:0;dpkg -l |grep "^rc"|awk '{print $2}' |xargs aptitude -y purge
+: 1441295299:0;cd
+: 1441295305:0;vi .zshrc
+: 1441295340:0;source .zshrc
+: 1441295347:0;dpkg -l |grep "^rc"|awk '{print $2}' |xargs aptitude -y purge
+: 1441295367:0;cleanall
+: 1441295374:0;vi .zshrc
+: 1441295429:0;source .zshrc
+: 1441295433:0;ll
+: 1441295439:0;cleanall
+: 1441295454:0;vi .zshrc
+: 1441295568:0;source .zshrc
+: 1441295573:0;cleanall
+: 1441295584:0;ll
+: 1441295589:0;clc
+: 1441306046:0;ll
+: 1441306052:0;fcdla
+: 1441306062:0;ll
+: 1441306069:0;ls -l
+: 1441306084:0;vi .zshrc
+: 1441306103:0;vi .vimrc
+: 1441306126:0;cd .vim
+: 1441306127:0;l
+: 1441306130:0;cd
+: 1441306136:0;locate vim
+: 1441306155:0;cd /usr/lib
+: 1441306156:0;l
+: 1441306159:0;cd vim
+: 1441306163:0;cd ..
+: 1441306168:0;cd share
+: 1441306170:0;l
+: 1441306174:0;cd vim
+: 1441306175:0;l
+: 1441306192:0;vi vimrc
+: 1441306237:0;cd
+: 1441306245:0;vi .vimrc
+: 1441306280:0;source .vimrc
+: 1441306289:0;j ios
+: 1441306291:0;ll
+: 1441306302:0;cd ..
+: 1441306310:0;cd blxu.github.io
+: 1441306311:0;l
+: 1441306316:0;vi index.html
+: 1441306448:0;cd
+: 1441306456:0;vi .vimrc
+: 1441306507:0;j ios
+: 1441306512:0;cd ..
+: 1441306520:0;cd blxu.github.io
+: 1441306524:0;vi index.html
+: 1441306542:0;cd
+: 1441306547:0;vi .vimec
+: 1441306568:0;vi .vimrc
+: 1441306597:0;vi .zshrc
+: 1441306612:0;cd /etc/vim
+: 1441306614:0;l
+: 1441306621:0;cd
+: 1441306632:0;cd /usr/share
+: 1441306634:0;l
+: 1441306636:0;cd vim
+: 1441306637:0;l
+: 1441306645:0;cd addons
+: 1441306646:0;l
+: 1441306649:0;cd plugin
+: 1441306650:0;l
+: 1441306655:0;cd ..
+: 1441306657:0;ll
+: 1441306659:0;cd ..
+: 1441306664:0;l
+: 1441306669:0;cd vim
+: 1441306677:0;cd vim74
+: 1441306678:0;l
+: 1441306694:0;cd colors
+: 1441306695:0;l
+: 1441307104:0;git clone https://github.com/jonathanfilip/vim-lucius.git
+: 1441307107:0;l
+: 1441307109:0;ll
+: 1441307113:0;cd vim-lucius
+: 1441307114:0;l
+: 1441307118:0;cd geoclue
+: 1441307122:0;cd ..
+: 1441307127:0;l
+: 1441307128:0;cd
+: 1441307134:0;cd vim-lucius
+: 1441307137:0;cd colors
+: 1441307138:0;l
+: 1441307205:0;cp lucius.vim /usr/share/vim/vim74/colors/lucius.vim
+: 1441307209:0;cd
+: 1441307224:0;vi .zshrc
+: 1441307248:0;vi .vimrc
+: 1441307286:0;vi .zshrc
+: 1441307382:0;vi .vimrc
+: 1441307432:0;vi .zshrc
+: 1441307442:0;vi .vimrc
+: 1441307483:0;vi
+: 1441307500:0;vi .vimrc
+: 1441307552:0;vi .zshrc
+: 1441307570:0;vi .vimrc
+: 1441307609:0;vi .zshrc
+: 1441307720:0;vi .vimrc
+: 1441307765:0;vi .zshrc
+: 1441307772:0;vi .vimrc
+: 1441307819:0;vib.zshrc
+: 1441307829:0;vi .zshrc
+: 1441307842:0;vi .vimrc
+: 1441307848:0;j ios
+: 1441307857:0;vi index.html
+: 1441307863:0;cd ..
+: 1441307868:0;l
+: 1441307870:0;cd blxu.github.io
+: 1441307876:0;vi index.html
+: 1441307923:0;cd
+: 1441307930:0;vi .vimrc
+: 1441307985:0;j ios
+: 1441307990:0;cd ..
+: 1441307995:0;cd blxu.github.io
+: 1441308003:0;vi index.html
+: 1441308009:0;cd
+: 1441308014:0;vi .vimrc
+: 1441308033:0;j blxu
+: 1441308037:0;cd blxu.github.io
+: 1441308041:0;vi index.html
+: 1441308046:0;cd
+: 1441308053:0;vim .vimrc
+: 1441308081:0;j blxu.
+: 1441308088:0;vi index.html
+: 1441308098:0;cd
+: 1441308104:0;vi .vimrc
+: 1441308123:0;j blxu.
+: 1441308129:0;vi index.html
+: 1441308357:0;l
+: 1441308365:0;vi .zshrc
+: 1441308446:0;source .zshrc
+: 1441308448:0;l
+: 1441308451:0;ll
+: 1441308457:0;vi .zshrc
+: 1441308529:0;source .zshrc
+: 1441308531:0;l
+: 1441308533:0;ll
+: 1441308542:0;cd github
+: 1441308544:0;l
+: 1441308564:0;vi .zshrc
+: 1441308570:0;cd
+: 1441308574:0;vi .zshrc
+: 1441308631:0;source .zshrc
+: 1441308632:0;l
+: 1441308639:0;cd github/
+: 1441308640:0;l
+: 1441308653:0;cd blxu
+: 1441308687:0;l
+: 1441308922:0;vi .vimrc
+: 1441308957:0;l
+: 1441308966:0;vi test.sh
+: 1441309008:0;l
+: 1441309010:0;cd
+: 1441309018:0;agar
+: 1441309025:0;agac
+: 1441309038:0;ag autoclean
+: 1441309043:0;ag clean
+: 1441309047:0;l
+: 1441309049:0;ll
+: 1441309071:0;mv vim-lucius /usr/share/vim/vim74
+: 1441309073:0;l
+: 1441309075:0;ll
+: 1441309079:0;cd github
+: 1441309080:0;l
+: 1441309086:0;cd blxu
+: 1441309089:0;cd blxu.github.io
+: 1441309090:0;l
+: 1441309096:0;vi index.html
+: 1441309406:0;./test.sh
+: 1441309415:0;git pull
+: 1441309441:0;vi index.html
+: 1441309498:0;./test.sh
+: 1441309793:0;j blxu.
+: 1441309796:0;l
+: 1441309803:0;vi index.html
+: 1441309980:0;./test.sh
+: 1441310084:0;vi index.html
+: 1441310290:0;./test.sh
+: 1441310395:0;vi index.html
+: 1441310605:0;./test.sh
+: 1441310911:0;j blxu.
+: 1441310927:0;git pull -u origin master
+: 1441310936:0;vi index.html
+: 1441312112:0;ll
+: 1441312122:0;j blxu.
+: 1441312124:0;l
+: 1441312130:0;git pull -u origin master
+: 1441312137:0;l
+: 1441312142:0;vi index.html
+: 1441312235:0;./test.sh
+: 1441323865:0;ll
+: 1441323873:0;vi .zshrc
+: 1441323902:0;vim -v
+: 1441324058:0;ll
+: 1441324061:0;clc
+: 1441324063:0;ll
+: 1441324064:0;l
+: 1441324081:0;cd .pip
+: 1441324083:0;l
+: 1441324097:0;vi pip.log
+: 1441324107:0;l
+: 1441324151:0;cd 
+: 1441324157:0;cd .ssh
+: 1441324163:0;l
+: 1441324203:0;chmod 644 config
+: 1441324205:0;l
+: 1441324226:0;chmod 644 *pub
+: 1441324227:0;l
+: 1441324273:0;vi config
+: 1441324368:0;mv id_rsa id_rsa1
+: 1441324385:0;mv id_rsa.pub id_rsa1.pub
+: 1441324387:0;ll
+: 1441324412:0;vi known_hosts
+: 1441324425:0;ll
+: 1441324428:0;l
+: 1441324466:0;cd 
+: 1441324474:0;cd github
+: 1441324492:0;mkdir alexxu0510
+: 1441324498:0;cd alexxu0510
+: 1441324542:0;git clone github3:alexxu0510/alexxu0510.github.io.git
+: 1441324551:0;l
+: 1441324581:0;git clone github3:alexxu0510/ios.pac.git
+: 1441324587:0;l
+: 1441324594:0;cd ios.pac
+: 1441324596:0;l
+: 1441324601:0;vi test.sh
+: 1441324619:0;vi index.html
+: 1441324634:0;ll
+: 1441324656:0;vi myrule.txt
+: 1441324662:0;ll
+: 1441324668:0;cd ..
+: 1441324671:0;cd alexxu0510.github.io
+: 1441324672:0;l
+: 1441324702:0;gcg
+: 1441324766:0;git pull -u origin master
+: 1441329829:0;ll
+: 1441329850:0;clc
+: 1441329855:0;la
+: 1441329857:0;l
+: 1441329861:0;ll
+: 1441343614:0;ls
+: 1441343616:0;ll
+: 1441343620:0;cd github
+: 1441343642:0;l
+: 1441343885:0;ll
+: 1441343888:0;cd 
+: 1441343889:0;l
+: 1441343893:0;cd github
+: 1441343894:0;l

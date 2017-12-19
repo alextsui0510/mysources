@@ -1,0 +1,10 @@
+locale-gen zh_CN.UTF-8
+apt-get install sudo
+apt-get install gvim
+apt-get install vim-gnome
+apt-get install zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+apt-get install curl
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+apt-get install git
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

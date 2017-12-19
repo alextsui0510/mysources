@@ -1,0 +1,26 @@
+apt-get update
+apt-get upgrade
+apt-get install build-essential autoconf libtool libssl-dev gawk debhelper git
+git clone https://github.com/shadowsocks/shadowsocks-libev.git
+cd shadowsocks-libev
+dpkg-buildpackapt-gete -us -uc
+cd ..
+dpkg -i shadowsocks-libev*.deb
+
+
+
+vi /etc/shadowsocks-libev/config.json
+
+  {
+"server" : "::",
+"server_port" : 80,
+"local_address" : "::0",
+"local_port" : 443,
+"password" : "alohaalex",
+"timeout" : 600,
+"method" : "aes-256-cfb"
+  }
+
+
+
+

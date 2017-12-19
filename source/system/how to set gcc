@@ -1,0 +1,10 @@
+export CC=/usr/local/Cellar/gcc/7.1.0/bin/gcc-7
+export CXX=/usr/local/Cellar/gcc/7.1.0/bin/g++-7
+export CPP=/usr/local/Cellar/gcc/7.1.0/bin/cpp-7
+export LD=/usr/local/Cellar/gcc/7.1.0/bin/gcc-7
+alias c++=/usr/local/Cellar/gcc/7.1.0/bin/c++-7
+alias g++=/usr/local/Cellar/gcc/7.1.0/bin/g++-7
+alias gcc=/usr/local/Cellar/gcc/7.1.0/bin/gcc-7
+alias cpp=/usr/local/Cellar/gcc/7.1.0/bin/cpp-7
+alias ld=/usr/local/Cellar/gcc/7.1.0/bin/gcc-7
+alias cc=/usr/local/Cellar/gcc/7.1.0/bin/gcc-7

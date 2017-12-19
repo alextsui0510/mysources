@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>alex' special</short>
+  <description>The firewall setting of alex's vps.</description>
+  <port protocol="tcp" port="1032"/>
+  <port protocol="udp" port="1080"/>
+  <port protocol="tcp" port="1080"/>
+</service>

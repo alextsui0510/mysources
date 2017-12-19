@@ -1,0 +1,17 @@
+../gfwlist2pac/main.py
+../gfwlist2pac/__init__.py
+../gfwlist2pac/resources/__init__.py
+../gfwlist2pac/resources/__init__.pyc
+../gfwlist2pac/resources/proxy.pac
+../gfwlist2pac/resources/builtin.txt
+../gfwlist2pac/resources/tld.txt
+../gfwlist2pac/resources/abp.js
+../gfwlist2pac/main.pyc
+../gfwlist2pac/__init__.pyc
+./
+entry_points.txt
+top_level.txt
+PKG-INFO
+SOURCES.txt
+dependency_links.txt
+../../../../bin/gfwlist2pac

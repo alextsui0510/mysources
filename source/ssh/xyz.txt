@@ -1,0 +1,23 @@
+Name:      alexxu.xyz
+Address 1: 106.186.30.116 li611-116.members.linode.com
+Address 2: 106.187.50.124 li400-124.members.linode.com
+Address 3: 106.184.7.63 li1072-63.members.linode.com
+Address 4: 211.22.145.180 211-22-145-180.hostinginside.com
+Address 5: 172.81.110.144 172.81.110.144.static.klayer.com
+Address 6: 139.59.192.215
+Address 7: 199.68.198.101
+Address 8: 103.56.218.213
+Address 9: 45.58.54.190
+Address 10: 106.187.41.44 li384-44.members.linode.com
+Address 11: 106.185.38.145 li747-145.members.linode.com
+Address 12: 45.127.92.234
+Address 13: 106.187.52.17 li402-17.members.linode.com
+Address 14: 69.163.40.75
+Address 15: 153.92.41.22
+Address 16: 45.125.164.54
+Address 17: 61.216.91.242 61-216-91-242.HINET-IP.hinet.net
+Address 18: 45.125.193.21 45-125-193-21.ip4.readyserver.sg
+Address 19: 106.186.28.27 li608-27.members.linode.com
+Address 20: 45.124.64.106
+Address 21: 202.168.153.73 reserve.tinmok.com
+Address 22: 58.221.29.124

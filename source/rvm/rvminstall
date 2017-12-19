@@ -1,0 +1,7 @@
+curl -L get.rvm.io | bash -s stable
+source ~/.bashrc
+source ~/.bash_profile
+rvm -v
+ruby -v
+rvm list known
+rvm install 2.2.4

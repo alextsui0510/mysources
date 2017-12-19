@@ -1,0 +1,86 @@
+禁止 root 使用 ssh 登入
+CentOS 7 預設容許任何帳號透過 ssh 登入，包括 root 和一般帳號，為了不讓 root 帳號被黑客暴力入侵，我們必須禁止 root 帳號的 ssh 功能，事實上 root 也沒有必要 ssh 登入伺服器，因為只要使用 su 或 sudo (當然需要輸入 root 的密碼) 普通帳號便可以擁有 root 的權限。使用 vim (或任何文本編輯器) 開啓 /etc/ssh/sshd_config，尋找：
+
+
+1
+＃PermitRootLogin yes
+修改為：
+
+
+1
+PermitRootLogin no
+最後輸入以下指令重新啟動 sshd：
+
+
+1
+systemctl restart sshd.service
+這樣黑客要取得 root 的權限，必須破解 root 和一個普通用戶的密碼，難度增加了。
+
+完成後不要登出系統，使用另一個視窗嘗試登入 root 和普通帳號，測試無誤便可進行下一步。
+
+4. 使用非常規的 ssh 端口
+Ssh 預設使用端口 22，這是在 IANA 註冊的官方端口，但沒有人說 ssh 不能使用其他端口，很多黑客專門向伺服器的 22 端口發動攻擊，即使你的伺服器固若金湯、牢不可破，但是要系統日以繼夜接受攻擊，消耗的系統資源（網絡、處理器、記憶體等等）也不會少，何況它是否真的牢不可破還說不定呢！所以有必要讓 ssh 使用其他端口，只讓有權使用 ssh 的用戶知道。
+
+使用 vim  (或任何文本編輯器) 開啓 /etc/ssh/sshd_config，尋找：
+
+
+1
+＃Port 22
+修改為：
+
+
+1
+Port 10837
+你可以把 10837 改為任何 1024 – 65535 之間的任何數字，若果怕與某些系統服務發生衝突，可以參考一下這裏。
+
+跟著重新啟動 sshd：
+
+
+1
+systemctl restart sshd.service
+然後是設定防火牆，CentOS 7 的內核已經有防火牆 netfilter，但你的系統未必安裝了用戶界面，較前版本的 CentOS 預設使用 iptables，但 CentOS 7 開始使用效能更高、穩定性更好的 firewalld，若果伺服器尚未安裝 firewalld，可以使用以下指令安裝，不確定是否已經安裝的話也可以輸入這個指令，它會告訴你已經安裝然後退出。
+
+
+1
+yum install firewalld
+跟著啟動：
+
+
+1
+systemctl start firewalld
+設定 firewalld 的方法有兩個，第一個是修改 firewalld 有關 sshd 的設定，把端口 22 改為 10837，這是正統的做法，但步驟比較多；第二個是要求 firewalld 開啓端口 10837，不指定它屬於哪一個服務，這個做法通常處理臨時的端口開啓／封鎖，步驟簡單，但是日後你要是忘記了這個端口為甚麼開啟了呢？什麼時候開啟的呢？為了哪一項服務開啟呢？可能有點麻煩。我兩種方法都會介紹一下，但作為專業的系統管理員（即使不是真正的專業，也應該具備這樣的心態），我推薦使用第一種方法。
+
+設定防火牆方法一：
+複製 firewalld 有關 sshd 的設定檔案：
+
+
+1
+cp /usr/lib/firewalld/services/ssh.xml /etc/firewalld/services/
+使用 vim  (或任何文本編輯器) 開啓 /etc/firewalld/services/ssh.xml，尋找：
+
+
+1
+  <port protocol="tcp" port="22"/>
+修改為：
+
+
+1
+  <port protocol="tcp" port="10837"/>
+儲存後重新載入 firewalld：
+
+
+1
+firewall-cmd --reload
+設定防火牆方法二：
+輸入以下指令：
+
+
+1
+firewall-cmd --zone=public --add-port=10837/tcp --permanent
+就是這樣簡單！
+
+不論使用哪種方法，完成後不要登出系統，使用另一個視窗嘗試登入，例如：
+
+
+1
+ssh -p 10837 ahhang@192.168.1.188
